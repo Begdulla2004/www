@@ -1,0 +1,279 @@
+[
+    {
+        "id": "it_mcq_demo",
+        "group_id": "g_seed",
+        "type": "mcq",
+        "title": "Matematika test 1",
+        "questions": [
+            {
+                "id": "q1",
+                "text": "2+2?",
+                "options": [
+                    "3",
+                    "4",
+                    "5",
+                    "2"
+                ],
+                "answer_index": 1,
+                "max_score": 1,
+                "has_images": false,
+                "has_formulas": false,
+                "images": []
+            },
+            {
+                "id": "q2",
+                "text": "3*3?",
+                "options": [
+                    "6",
+                    "9",
+                    "3",
+                    "12"
+                ],
+                "answer_index": 1,
+                "max_score": 1
+            }
+        ],
+        "auto_default_score": 1,
+        "created_by": "u_seed",
+        "created_at": "2025-10-27T09:00:00Z"
+    },
+    {
+        "id": "it_essay_demo",
+        "group_id": "g_seed",
+        "type": "essay",
+        "title": "Ingliz tili esse 1",
+        "questions": [
+            {
+                "id": "q5",
+                "text": "Write about your favorite holiday.",
+                "sample_answer": "My favorite holiday is New Year because ...",
+                "rubric": "relevance:40, grammar:25, structure:20, vocabulary:15",
+                "max_score": 10
+            }
+        ],
+        "created_by": "u_seed",
+        "created_at": "2025-10-27T09:05:00Z"
+    },
+    {
+        "id": "it_03fc6931",
+        "group_id": "g_a948fdaf",
+        "type": "essay",
+        "title": "rabatatexnika",
+        "questions": [
+            {
+                "id": "q_84bfb9a1",
+                "text": "Tokni otishiga qarshilik qiladigan komponent.",
+                "sample_answer": "Rezistor",
+                "rubric": "relevance:40, grammar:25, structure:20, vocabulary:15",
+                "max_score": 10
+            }
+        ],
+        "created_by": "u_05f0e663",
+        "created_at": "2025-10-27T18:07:51+00:00"
+    },
+    {
+        "id": "it_e4019c74",
+        "group_id": "g_eee47a9f",
+        "type": "essay",
+        "title": "arduino uno",
+        "questions": [
+            {
+                "id": "q_5a1cab07",
+                "text": "Arduino uno degenimiz ne?",
+                "sample_answer": "ortasha proektler ushin , yagniy sensor datchig matorlardi basqariwshi plata.",
+                "rubric": "relevance:40, grammar:25, structure:20, vocabulary:15",
+                "max_score": 10
+            }
+        ],
+        "created_by": "u_647a8d5d",
+        "created_at": "2025-10-28T11:01:41+00:00"
+    },
+    {
+        "id": "it_ac8337b0",
+        "group_id": "g_08765cc9",
+        "type": "essay",
+        "title": "Pratakollar haqqinda",
+        "questions": [
+            {
+                "id": "q_e970420d",
+                "text": "Transport darejesinde paydalanilatugin pratakollar?",
+                "sample_answer": "UTP ham TSP pratakollari kiredi.",
+                "rubric": "relevance:40, grammar:25, structure:20, vocabulary:15",
+                "max_score": 10
+            }
+        ],
+        "created_by": "u_647a8d5d",
+        "created_at": "2025-10-31T10:15:31+00:00"
+    },
+    {
+        "id": "it_4887b634",
+        "group_id": "g_e9849027",
+        "type": "essay",
+        "title": "Soraw",
+        "questions": [
+            {
+                "id": "q_ff92efaf",
+                "text": "UDP PROTOKOLDI TUSINDIRIP BERIN",
+                "sample_answer": "Bul protokolda paketler tekseriwsiz uzatiladi. Bul protokol keshigiwge tasirshen progrrammalarga qolay",
+                "rubric": "relevance:40, grammar:25, structure:20, vocabulary:15",
+                "max_score": 10
+            }
+        ],
+        "created_by": "u_647a8d5d",
+        "created_at": "2025-11-03T11:15:43+00:00"
+    },
+    {
+        "id": "it_13f7de6c",
+        "group_id": "g_85023ef9",
+        "type": "essay",
+        "title": "3e2rfgb",
+        "questions": [
+            {
+                "id": "q_fde6ad08",
+                "text": "raqamli rivojlanish davri haqida tushunchangiz?",
+                "sample_answer": "barcha sohalar avtomatlashtirilgan 2020-2030 yillar",
+                "rubric": "relevance:40, grammar:25, structure:20, vocabulary:15",
+                "max_score": 50
+            }
+        ],
+        "created_by": "u_70b11a72",
+        "created_at": "2025-11-28T12:40:33+00:00"
+    },
+    {
+        "id": "it_c805f004",
+        "group_id": "g_85023ef9",
+        "type": "essay",
+        "title": "3e2rfgb",
+        "questions": [
+            {
+                "id": "q_fde6ad08",
+                "text": "raqamli rivojlanish davri haqida tushunchangiz?",
+                "sample_answer": "barcha sohalar avtomatlashtirilgan 2020-2030 yillar",
+                "rubric": "relevance:40, grammar:25, structure:20, vocabulary:15",
+                "max_score": 50
+            }
+        ],
+        "created_by": "u_70b11a72",
+        "created_at": "2025-11-28T16:56:21+00:00"
+    },
+    {
+        "id": "it_65805d82",
+        "group_id": "g_85023ef9",
+        "type": "essay",
+        "title": "3e2rfgb",
+        "questions": [
+            {
+                "id": "q_fde6ad08",
+                "text": "raqamli rivojlanish davri haqida tushunchangiz?",
+                "sample_answer": "barcha sohalar avtomatlashtirilgan 2020-2030 yillar",
+                "rubric": "relevance:40, grammar:25, structure:20, vocabulary:15",
+                "max_score": 50
+            }
+        ],
+        "created_by": "u_70b11a72",
+        "created_at": "2025-11-28T17:05:24+00:00"
+    },
+    {
+        "id": "it_bc5a9206",
+        "group_id": "g_6fef3eae",
+        "type": "mcq",
+        "title": "matametika kvadrat tenlemeler",
+        "questions": [
+            {
+                "id": "q_b4f83ea0",
+                "text": "1. x^2+2x+1=0 . x ti tabin.",
+                "options": [
+                    "-1",
+                    "2",
+                    "3",
+                    "-2"
+                ],
+                "answer_index": 0,
+                "max_score": 2
+            }
+        ],
+        "auto_default_score": 1,
+        "created_by": "u_b726c424",
+        "created_at": "2025-11-28T17:36:56+00:00"
+    },
+    {
+        "id": "it_7687a7f6",
+        "group_id": "g_6fef3eae",
+        "type": "mcq",
+        "title": "matametika kvadrat tenlemeler",
+        "questions": [
+            {
+                "id": "q_fd61f034",
+                "text": "1. x^2+6x+6=0 . x1, x2  ti tabin.",
+                "options": [
+                    "-1 vs 1",
+                    "2 vs 3",
+                    "5 vs 3",
+                    "2 vs -2"
+                ],
+                "answer_index": 1,
+                "max_score": 2
+            }
+        ],
+        "auto_default_score": 1,
+        "created_by": "u_b726c424",
+        "created_at": "2025-11-28T17:38:30+00:00"
+    },
+    {
+        "id": "it_98e613c0",
+        "group_id": "g_6fef3eae",
+        "type": "essay",
+        "title": "kvadrat tenleme",
+        "questions": [
+            {
+                "id": "q_e9c78d97",
+                "text": "kvadrat tenleme degenimiz ne?",
+                "sample_answer": "Kvadrat tenleme - bul eki darajeli algebraik tenleme bolıp tabıladı. Ol $a \\neq 0$ shárti orınlanatuǵın $a$, $b$, hám $c$ haqıyqıy sandar bolǵan jerdegi ulıwma túrdegi $ax^2 + bx + c = 0$ kórinisinde beriledi.🔑 Tiykarǵı KomponentlerKvadrat teńleme úsh tiykarǵı bólekten turadı:Kvadrat aǵzası ($ax^2$): Bul teńlemedegi eń joqarı dárejeli aǵza bolıp, $x^2$ (yamasa belgisizdiń kvadratı) bar. $a$ - bul aǵzanıń koefficienti, hám ol nolge teń bola almaydı.Sızıqlı aǵza ($bx$): Bul aǵzada belgisiz tek birinshi dárejede ($x$) turadı. $b$ - bul aǵzanıń koefficienti.Erkin aǵza ($c$): Bul aǵza belgisizsiz turaqlı san.💡 Sheshimi (Kórnesleri)Kvadrat teńlemeni sheshiw degenimiz - teńlemeni qanaatlandıratuǵın $x$ tiń mánislerin tabıw, olar kóbinese kórnesler (yaki sheshimler) dep ataladı. Kvadrat teńlemede eń kóp bolǵanda eki haqıyqıy kórnes boladı.Kórnesler ádetde diskriminant (simvolı $D$) dep atalatuǵın mánisti esaplaw arqalı tabıladı, ol $D = b^2 - 4ac$ formulasi menen beriledi.ShutterstockОткрытьEger $D > 0$ bolsa, eki hár túrli haqıyqıy kórnes bar.Eger $D = 0$ bolsa, bir (qaytalanaǵan) haqıyqıy kórnes bar.Eger $D < 0$ bolsa, haqıyqıy kórnesler joq (tek kompleks kórnesler bar).⚙️ QollanılıwıKvadrat teńlemeler fizika, injenerlik, ekonomika hám geometriya sıyaqlı kóp tarawlarda keń qollanıladı. Mısalı:Zattıń erkin túsiw trayektoriyasın (parabola) modellew.Maydan esapların islew (mısalı, turaqlı perimetrli maksimal maydan).",
+                "rubric": "relevance:40, grammar:25, structure:20, vocabulary:15",
+                "max_score": 50
+            }
+        ],
+        "created_by": "u_b726c424",
+        "created_at": "2025-11-28T17:44:45+00:00"
+    },
+    {
+        "id": "it_27d51c7f",
+        "group_id": "g_85023ef9",
+        "type": "essay",
+        "title": "3e2rfgb",
+        "questions": [
+            {
+                "id": "q_fde6ad08",
+                "text": "raqamli rivojlanish davri haqida tushunchangiz?",
+                "sample_answer": "barcha sohalar avtomatlashtirilgan 2020-2030 yillar",
+                "rubric": "relevance:40, grammar:25, structure:20, vocabulary:15",
+                "max_score": 50
+            }
+        ],
+        "created_by": "u_70b11a72",
+        "created_at": "2025-11-29T03:53:39+00:00"
+    },
+    {
+        "id": "it_fbb5c8b4",
+        "group_id": "g_b198a6e5",
+        "type": "mcq",
+        "title": "Boliw",
+        "questions": [
+            {
+                "id": "q_c9601373",
+                "text": "5+5*4",
+                "options": [
+                    "20",
+                    "25",
+                    "30",
+                    "22"
+                ],
+                "answer_index": 0,
+                "max_score": 1
+            }
+        ],
+        "auto_default_score": 1,
+        "created_by": "u_5822e86c",
+        "created_at": "2025-11-29T05:11:27+00:00"
+    }
+]

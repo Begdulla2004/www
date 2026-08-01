@@ -1,0 +1,210 @@
+/**
+ * Media editor uchun CSS stillar
+ */
+
+/* Media toolbar */
+#media-toolbar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    flex-wrap: wrap;
+}
+
+#media-toolbar button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4a6fa5;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#media-toolbar button:hover {
+    background-color: #3a5a80;
+}
+
+#media-toolbar button i {
+    font-size: 16px;
+}
+
+#image-file-input {
+    display: none;
+}
+
+/* Formula modal */
+#formula-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.formula-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+}
+
+.formula-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.formula-modal-header h3 {
+    margin: 0;
+}
+
+.close {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.formula-input-container {
+    margin-bottom: 15px;
+}
+
+.formula-input-container textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: monospace;
+    resize: vertical;
+}
+
+#formula-preview {
+    min-height: 60px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+}
+
+/* Media gallery */
+#media-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.media-item {
+    width: 150px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.media-content {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #f9f9f9;
+}
+
+.media-content img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.media-content.formula {
+    padding: 10px;
+}
+
+.formula-display {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}
+
+.media-actions {
+    display: flex;
+    border-top: 1px solid #ddd;
+}
+
+.media-actions button {
+    flex: 1;
+    padding: 5px;
+    border: none;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.media-actions button:hover {
+    background-color: #e5e5e5;
+}
+
+.media-actions button.insert-btn {
+    border-right: 1px solid #ddd;
+    color: #4a6fa5;
+}
+
+.media-actions button.delete-btn {
+    color: #d9534f;
+}
+
+.no-media {
+    width: 100%;
+    text-align: center;
+    color: #777;
+    padding: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #media-toolbar {
+        flex-direction: column;
+    }
+    
+    .media-item {
+        width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .media-item {
+        width: 100%;
+    }
+    
+    .formula-modal-content {
+        width: 95%;
+    }
+}
+
+/* Media references in text */
+.media-reference {
+    display: inline-block;
+    padding: 2px 6px;
+    background-color: #e8f4ff;
+    border-radius: 3px;
+    margin: 0 2px;
+    font-size: 0.9em;
+    color: #4a6fa5;
+    border: 1px solid #c8e1ff;
+}

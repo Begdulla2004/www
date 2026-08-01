@@ -1,0 +1,1052 @@
+[
+    {
+        "id": "a_e691a78e",
+        "item_id": "it_mcq_demo",
+        "group_id": "g_seed",
+        "student_display_name": "Begdulla",
+        "student_hash_id": "s_f6744b24",
+        "started_at": "2025-10-26T21:06:34+00:00",
+        "finished_at": null,
+        "answers": [],
+        "total_score": 0,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_9ef48922",
+        "item_id": "it_essay_demo",
+        "group_id": "g_seed",
+        "student_display_name": "Begdulla",
+        "student_hash_id": "s_8d92ddd4",
+        "started_at": "2025-10-26T21:08:04+00:00",
+        "finished_at": null,
+        "answers": [],
+        "total_score": 0
+    },
+    {
+        "id": "a_9f2602d1",
+        "item_id": "it_essay_demo",
+        "group_id": "g_seed",
+        "student_display_name": "Begdulla",
+        "student_hash_id": "s_cf6347a6",
+        "started_at": "2025-10-27T16:55:13+00:00",
+        "finished_at": "2025-10-27T16:55:46+00:00",
+        "answers": [
+            {
+                "question_id": "q5",
+                "type": "essay",
+                "student_text": "I am , begdulla.",
+                "score": 1,
+                "graded_by": "ai",
+                "ai_evaluation": {
+                    "score": 1,
+                    "confidence": 0.95,
+                    "breakdown": {
+                        "relevance": 0,
+                        "grammar": 0.2,
+                        "structure": 0.2,
+                        "vocabulary": 0.1
+                    },
+                    "reasoning": "The answer is completely irrelevant to the question. The grammar is technically present, but the structure is poor, and the vocabulary is basic. Therefore, the score is very low.",
+                    "suggested_feedback": "This answer does not address the question. Please write about your favorite holiday and why you like it. Remember to use complete sentences."
+                }
+            }
+        ],
+        "total_score": 1
+    },
+    {
+        "id": "a_fc9f7ccf",
+        "item_id": "it_mcq_demo",
+        "group_id": "g_seed",
+        "student_display_name": "Test",
+        "student_hash_id": "s_d70a42d4",
+        "started_at": "2025-10-27T17:44:35+00:00",
+        "finished_at": "2025-10-27T17:44:39+00:00",
+        "answers": [
+            {
+                "question_id": "q1",
+                "type": "mcq",
+                "selected_index": 1,
+                "score": 1,
+                "graded_by": "system"
+            },
+            {
+                "question_id": "q2",
+                "type": "mcq",
+                "selected_index": 1,
+                "score": 1,
+                "graded_by": "system"
+            }
+        ],
+        "total_score": 2
+    },
+    {
+        "id": "a_efd4f258",
+        "item_id": "it_03fc6931",
+        "group_id": "g_a948fdaf",
+        "student_display_name": "Test",
+        "student_hash_id": "s_1a09724d",
+        "started_at": "2025-10-27T18:08:20+00:00",
+        "finished_at": "2025-10-27T18:08:30+00:00",
+        "answers": [
+            {
+                "question_id": "q_84bfb9a1",
+                "type": "essay",
+                "student_text": "Arduino uno",
+                "score": 1,
+                "graded_by": "ai",
+                "ai_evaluation": {
+                    "score": 1,
+                    "confidence": 0.9,
+                    "breakdown": {
+                        "relevance": 0,
+                        "grammar": 2.5,
+                        "structure": 0,
+                        "vocabulary": 0
+                    },
+                    "reasoning": "The student's answer is completely irrelevant to the question. Arduino Uno is a microcontroller board, not a component that resists current flow. Grammatically the answer is correct, but lacks the core relevance.",
+                    "suggested_feedback": "The answer is not correct. Please review the definition of a resistor and its function in a circuit. Arduino Uno is a board that can contain the resisotr as a part of electrical cicuit."
+                }
+            }
+        ],
+        "total_score": 1
+    },
+    {
+        "id": "a_98d19606",
+        "item_id": "it_03fc6931",
+        "group_id": "g_a948fdaf",
+        "student_display_name": "Beka",
+        "student_hash_id": "s_588f67af",
+        "started_at": "2025-10-28T04:17:48+00:00",
+        "finished_at": null,
+        "answers": [],
+        "total_score": 0
+    },
+    {
+        "id": "a_47aa1ac0",
+        "item_id": "it_03fc6931",
+        "group_id": "g_a948fdaf",
+        "student_display_name": "Begdulla",
+        "student_hash_id": "s_53a56766",
+        "started_at": "2025-10-28T04:20:04+00:00",
+        "finished_at": null,
+        "answers": [],
+        "total_score": 0
+    },
+    {
+        "id": "a_d6771b1f",
+        "item_id": "it_03fc6931",
+        "group_id": "g_a948fdaf",
+        "student_display_name": "wqasdf",
+        "student_hash_id": "s_91232f4f",
+        "started_at": "2025-10-28T04:20:47+00:00",
+        "finished_at": null,
+        "answers": [],
+        "total_score": 0
+    },
+    {
+        "id": "a_d42c5016",
+        "item_id": "it_e4019c74",
+        "group_id": "g_eee47a9f",
+        "student_display_name": "Bekaa",
+        "student_hash_id": "s_4dff4c70",
+        "started_at": "2025-10-28T11:02:03+00:00",
+        "finished_at": "2025-10-28T11:02:33+00:00",
+        "answers": [
+            {
+                "question_id": "q_5a1cab07",
+                "type": "essay",
+                "student_text": "Bul microplata",
+                "score": 6,
+                "graded_by": "ai",
+                "ai_evaluation": {
+                    "score": 6,
+                    "confidence": 0.8,
+                    "breakdown": {
+                        "relevance": 3,
+                        "grammar": 2,
+                        "structure": 1.5,
+                        "vocabulary": 0.5
+                    },
+                    "reasoning": "The student's answer is relevant as it identifies the Arduino Uno as a micro-controller board. However, it lacks the details about its specific use in controlling sensors and motors. The grammar is acceptable, but the answer is too brief and lacks specific vocabulary.",
+                    "suggested_feedback": "Your answer is correct but too brief. Can you expand on what the Arduino Uno is used for? For example, what kinds of projects is it good for?"
+                },
+                "answered_at": "2025-10-28T11:02:33+00:00",
+                "elapsed_ms": null
+            }
+        ],
+        "total_score": 6
+    },
+    {
+        "id": "a_25b415ba",
+        "item_id": "it_de755d14",
+        "group_id": "g_57d97a1b",
+        "student_display_name": "Begdulla",
+        "student_hash_id": "s_447abcd3",
+        "started_at": "2025-10-28T11:54:56+00:00",
+        "finished_at": "2025-10-28T11:55:28+00:00",
+        "answers": [
+            {
+                "question_id": "q_a3ccb17a",
+                "type": "essay",
+                "student_text": "Ol menin doism , 2004 jili tuwilgan , tuwilgan jeri Kanlikol .",
+                "score": 10,
+                "graded_by": "ai",
+                "ai_evaluation": {
+                    "score": 10,
+                    "confidence": 0.95,
+                    "breakdown": {
+                        "relevance": 4,
+                        "grammar": 2.5,
+                        "structure": 2,
+                        "vocabulary": 1.5
+                    },
+                    "reasoning": "The student's answer contains all the information in the sample answer. The grammar, structure, and vocabulary are appropriate.",
+                    "suggested_feedback": "Excellent answer! You accurately conveyed the key information about Ayzada."
+                },
+                "answered_at": "2025-10-28T11:55:28+00:00",
+                "elapsed_ms": null
+            }
+        ],
+        "total_score": 10
+    },
+    {
+        "id": "a_f11abec4",
+        "item_id": "it_e4019c74",
+        "group_id": "g_eee47a9f",
+        "student_display_name": "Begdulla",
+        "student_hash_id": "s_61211fea",
+        "started_at": "2025-10-28T12:05:31+00:00",
+        "finished_at": "2025-10-28T12:05:57+00:00",
+        "answers": [
+            {
+                "question_id": "q_5a1cab07",
+                "type": "essay",
+                "student_text": "Bul mikro plata hisbolanip shunchaki elektronikada qollaniladi.",
+                "score": 6,
+                "graded_by": "ai",
+                "ai_evaluation": {
+                    "score": 6,
+                    "confidence": 0.8,
+                    "breakdown": {
+                        "relevance": 2.32,
+                        "grammar": 1.45,
+                        "structure": 1.16,
+                        "vocabulary": 0.87
+                    },
+                    "reasoning": "Auto-eval stub: approximate grading based on answer length.",
+                    "suggested_feedback": "Add more detail, fix grammar and improve structure."
+                },
+                "answered_at": "2025-10-28T12:05:57+00:00",
+                "elapsed_ms": null
+            }
+        ],
+        "total_score": 6
+    },
+    {
+        "id": "a_c10cd60a",
+        "item_id": "it_e4019c74",
+        "group_id": "g_eee47a9f",
+        "student_display_name": "asda",
+        "student_hash_id": "s_5132a3df",
+        "started_at": "2025-10-28T12:07:51+00:00",
+        "finished_at": "2025-10-28T12:08:03+00:00",
+        "answers": [
+            {
+                "question_id": "q_5a1cab07",
+                "type": "essay",
+                "student_text": "arudino uno",
+                "score": 2,
+                "graded_by": "ai",
+                "ai_evaluation": {
+                    "score": 2,
+                    "confidence": 0.65,
+                    "breakdown": {
+                        "relevance": 0.96,
+                        "grammar": 0.6,
+                        "structure": 0.48,
+                        "vocabulary": 0.36
+                    },
+                    "reasoning": "Auto-eval stub: approximate grading based on answer length.",
+                    "suggested_feedback": "Add more detail, fix grammar and improve structure."
+                },
+                "answered_at": "2025-10-28T12:08:03+00:00",
+                "elapsed_ms": null
+            }
+        ],
+        "total_score": 2
+    },
+    {
+        "id": "a_cedadc06",
+        "item_id": "it_e4019c74",
+        "group_id": "g_eee47a9f",
+        "student_display_name": "asawqe",
+        "student_hash_id": "s_1a67c9c5",
+        "started_at": "2025-10-29T17:10:50+00:00",
+        "finished_at": "2025-10-29T17:12:08+00:00",
+        "answers": [
+            {
+                "question_id": "q_5a1cab07",
+                "type": "essay",
+                "student_text": "bu rabatexnikada qollaniladigan mikroplata xisoblanadi, atrdino uno Atmega328P chipri ornatilgan",
+                "score": 8,
+                "graded_by": "ai",
+                "ai_evaluation": {
+                    "score": 8,
+                    "confidence": 0.95,
+                    "breakdown": {
+                        "relevance": 4,
+                        "grammar": 2.5,
+                        "structure": 2,
+                        "vocabulary": 0
+                    },
+                    "reasoning": "O'quvchining javobi Arduino Uno nima ekanligini tushuntiradi, lekin o'qituvchi javobida keltirilganidek, uning asosiy maqsadini (sensorlar va motorlarni boshqarish) to'liq qamrab olmaydi. Javobda ba'zi bir texnik ma'lumotlar (Atmega328P chipi) keltirilgan. Leksikada kamchilik bor.",
+                    "suggested_feedback": "Arduino Uno ning amaliy qo'llanilishiga, masalan, sensorlar va motorlarni boshqarishga urg'u bering. Kelgusida batafsilroq ma'lumot berishga harakat qiling, lekin asosiy maqsadni unutmang."
+                },
+                "answered_at": "2025-10-29T17:12:08+00:00"
+            }
+        ],
+        "total_score": 8
+    },
+    {
+        "id": "a_95b8fa30",
+        "item_id": "it_ac8337b0",
+        "group_id": "g_08765cc9",
+        "student_display_name": "Begdulla",
+        "student_hash_id": "s_d29e1d02",
+        "started_at": "2025-10-31T10:16:05+00:00",
+        "finished_at": "2025-10-31T10:16:27+00:00",
+        "answers": [
+            {
+                "question_id": "q_e970420d",
+                "type": "essay",
+                "student_text": "Http ham HTTPS kiredi.",
+                "score": 6,
+                "graded_by": "ai",
+                "ai_evaluation": {
+                    "score": 6,
+                    "confidence": 0.9,
+                    "breakdown": {
+                        "relevance": 2,
+                        "grammar": 6,
+                        "structure": 7,
+                        "vocabulary": 5
+                    },
+                    "reasoning": "Studenttiń juwabı transport qatlamına tiyisli emes, HTTP hám HTTPS qosımsha qatlam protokollerı bolıp tabıladı. Til qateliği joq, strukturası tuwrı, leksikalıq jaqtan durıs, biraq kontekstten tısqarı.",
+                    "suggested_feedback": "Transport qatlamı protokollerine UTP hám TSP misal boladı. HTTP hám HTTPS qosımsha qatlam protokollerı ekenligin eske alıń."
+                },
+                "answered_at": "2025-10-31T10:16:27+00:00"
+            }
+        ],
+        "total_score": 6
+    },
+    {
+        "id": "a_04b8c163",
+        "item_id": "it_ac8337b0",
+        "group_id": "g_08765cc9",
+        "student_display_name": "qwasdcv",
+        "student_hash_id": "s_43e9b11d",
+        "started_at": "2025-11-01T04:24:06+00:00",
+        "finished_at": null,
+        "answers": [],
+        "total_score": 0,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_10674b36",
+        "item_id": "it_ac8337b0",
+        "group_id": "g_08765cc9",
+        "student_display_name": "qwasdcv",
+        "student_hash_id": "s_c58b1640",
+        "started_at": "2025-11-01T04:24:16+00:00",
+        "finished_at": null,
+        "answers": [],
+        "total_score": 0,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_fd02fd1f",
+        "item_id": "it_ac8337b0",
+        "group_id": "g_08765cc9",
+        "student_display_name": "szxcv",
+        "student_hash_id": "s_bf7e5d3d",
+        "started_at": "2025-11-02T03:07:02+00:00",
+        "finished_at": null,
+        "answers": [],
+        "total_score": 0,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_63b5d67f",
+        "item_id": "it_ac8337b0",
+        "group_id": "g_08765cc9",
+        "student_display_name": "szxcv",
+        "student_hash_id": "s_82808fee",
+        "started_at": "2025-11-02T03:09:59+00:00",
+        "finished_at": null,
+        "answers": [],
+        "total_score": 0,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_82777bc5",
+        "item_id": "it_ac8337b0",
+        "group_id": "g_08765cc9",
+        "student_display_name": "szxcv",
+        "student_hash_id": "s_31778e01",
+        "started_at": "2025-11-02T03:15:58+00:00",
+        "finished_at": null,
+        "answers": [],
+        "total_score": 0,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_a32b7160",
+        "item_id": "it_ac8337b0",
+        "group_id": "g_08765cc9",
+        "student_display_name": "Anon",
+        "student_hash_id": "s_c6a85a70",
+        "started_at": "2025-11-02T03:52:01+00:00",
+        "finished_at": null,
+        "answers": [],
+        "total_score": 0,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_c76f7919",
+        "item_id": "it_ac8337b0",
+        "group_id": "g_08765cc9",
+        "student_display_name": "Anon",
+        "student_hash_id": "s_e92aaf9d",
+        "started_at": "2025-11-02T03:52:05+00:00",
+        "finished_at": null,
+        "answers": [],
+        "total_score": 0,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_11bc73bb",
+        "item_id": "it_ac8337b0",
+        "group_id": "g_08765cc9",
+        "student_display_name": "qwad",
+        "student_hash_id": "s_c6bd80b7",
+        "started_at": "2025-11-03T05:24:33+00:00",
+        "finished_at": null,
+        "answers": [],
+        "total_score": 0,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_cf537809",
+        "item_id": "it_ac8337b0",
+        "group_id": "g_08765cc9",
+        "student_display_name": "qwad",
+        "student_hash_id": "s_c0a96ec4",
+        "started_at": "2025-11-03T05:25:13+00:00",
+        "finished_at": null,
+        "answers": [],
+        "total_score": 0,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_fab486ca",
+        "item_id": "it_ac8337b0",
+        "group_id": "g_08765cc9",
+        "student_display_name": "Anon",
+        "student_hash_id": "s_3ccb9533",
+        "started_at": "2025-11-03T05:59:23+00:00",
+        "finished_at": null,
+        "answers": [],
+        "total_score": 0,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_2cec1567",
+        "item_id": "it_ac8337b0",
+        "group_id": "g_08765cc9",
+        "student_display_name": "qwad",
+        "student_hash_id": "s_a18c1fbe",
+        "started_at": "2025-11-03T06:04:14+00:00",
+        "finished_at": null,
+        "answers": [],
+        "total_score": 0,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_2d02fe78",
+        "item_id": "it_ac8337b0",
+        "group_id": "g_08765cc9",
+        "student_display_name": "qwad",
+        "student_hash_id": "s_1970eb46",
+        "started_at": "2025-11-03T06:13:22+00:00",
+        "finished_at": null,
+        "answers": [],
+        "total_score": 0,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_0184a0ad",
+        "item_id": "it_ac8337b0",
+        "group_id": "g_08765cc9",
+        "student_display_name": "qwad",
+        "student_hash_id": "s_d2049dc9",
+        "started_at": "2025-11-03T06:25:30+00:00",
+        "finished_at": null,
+        "answers": [],
+        "total_score": 0,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_e602f938",
+        "item_id": "it_4887b634",
+        "group_id": "g_e9849027",
+        "student_display_name": "Begdulla",
+        "student_hash_id": "s_76528a43",
+        "started_at": "2025-11-03T11:16:15+00:00",
+        "finished_at": null,
+        "answers": [
+            {
+                "question_id": "q_ff92efaf",
+                "type": "essay",
+                "student_text": "",
+                "score": 7,
+                "graded_by": "ai",
+                "ai_evaluation": {
+                    "score": 7,
+                    "confidence": 0.9,
+                    "breakdown": {
+                        "relevance": 4,
+                        "grammar": 2.5,
+                        "structure": 0,
+                        "vocabulary": 0.5
+                    },
+                    "reasoning": "Javob juda qisqa. Protokolning asosiy xususiyatini aytib o'tdi, lekin ko'proq ma'lumot berish kerak edi. Tuzilishi yo'q, shunchaki qisqa gap. Lug'at boyligi juda kam.",
+                    "suggested_feedback": "Javobingizda UDP protokoli haqida batafsilroq ma'lumot bering. Protokolning afzalliklari va kamchiliklarini, hamda qanday dasturlarda ishlatilishini yozing. Javobingizni tuzilishini yaxshilang, masalan, kirish, asosiy qism va xulosa qilib tuzishingiz mumkin. Lug'at boyligingizni oshiring."
+                },
+                "answered_at": "2025-11-03T11:16:51+00:00"
+            }
+        ],
+        "total_score": 7,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_5f8fe159",
+        "item_id": "it_4887b634",
+        "group_id": "g_e9849027",
+        "student_display_name": "Begdulla",
+        "student_hash_id": "s_916ebfb7",
+        "started_at": "2025-11-03T11:19:43+00:00",
+        "finished_at": null,
+        "answers": [
+            {
+                "question_id": "q_ff92efaf",
+                "type": "essay",
+                "student_text": "",
+                "score": 7,
+                "graded_by": "ai",
+                "ai_evaluation": {
+                    "score": 7,
+                    "confidence": 0.9,
+                    "breakdown": {
+                        "relevance": 3,
+                        "grammar": 2,
+                        "structure": 1,
+                        "vocabulary": 1
+                    },
+                    "reasoning": "Juwapta UDP protokolining tek bir xarakteristikasi keltirilgen, toliq emes. Grammatikaliq qateler joq, biraq strukturasi qanaatlanarli emes, sebebi qisqa jumleler menen sheklengen. Baylanisli so'zler isletilgen, lekin so'z bayligi jetkiliksiz.",
+                    "suggested_feedback": "Juwabińizdi toliq qiliw ushin UDP protokolining basqa da xarakteristikalarin qosıń. Juwabińizdı tereńirek qılıw ushın, kóp jumlelerdi isletiw arqali strukturanı jaqsılawga harakat etiń."
+                },
+                "answered_at": "2025-11-03T11:19:52+00:00"
+            }
+        ],
+        "total_score": 7,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_07133115",
+        "item_id": "it_4887b634",
+        "group_id": "g_e9849027",
+        "student_display_name": "awdasdadw",
+        "student_hash_id": "s_fb00a266",
+        "started_at": "2025-11-04T11:47:43+00:00",
+        "finished_at": null,
+        "answers": [
+            {
+                "question_id": "q_ff92efaf",
+                "type": "essay",
+                "student_text": "",
+                "score": 6,
+                "graded_by": "ai",
+                "ai_evaluation": {
+                    "score": 6,
+                    "confidence": 0.8,
+                    "breakdown": {
+                        "relevance": 3,
+                        "grammar": 2,
+                        "structure": 1,
+                        "vocabulary": 0
+                    },
+                    "reasoning": "Juwapta UDP protokolining tiykarǵı wazıypası aytılǵan, biraq túsinik tolıq emes. Túsinik strukturalıq jaqtan tómen. Terminolojiya qollanılmaǵan.",
+                    "suggested_feedback": "Juwabıńızdı toltrıń. UDP protokolining qanday ekenligin tolıǵıraq tusindiriń hám terminologiyalardı qollanıń. Juwabıńızdı strukturalıq jaqtan jaqsıraq qılıń."
+                },
+                "answered_at": "2025-11-04T16:34:43+00:00"
+            }
+        ],
+        "total_score": 6,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_2e81ffa9",
+        "item_id": "it_4887b634",
+        "group_id": "g_e9849027",
+        "student_display_name": "adasda",
+        "student_hash_id": "s_c2f8b946",
+        "started_at": "2025-11-08T17:03:37+00:00",
+        "finished_at": "2025-11-08T17:05:35+00:00",
+        "answers": [
+            {
+                "question_id": "q_ff92efaf",
+                "type": "essay",
+                "student_text": "",
+                "score": 7,
+                "graded_by": "ai",
+                "ai_evaluation": {
+                    "score": 7,
+                    "confidence": 0.9,
+                    "breakdown": {
+                        "relevance": 40,
+                        "grammar": 25,
+                        "structure": 0,
+                        "vocabulary": 5
+                    },
+                    "reasoning": "Studentning javobi juda qisqa. UDP protokolini qisman tushuntirib bergan, lekin uning xususiyatlari to'liq ochib berilmagan. Tuzilishi yo'q.",
+                    "suggested_feedback": "Javobingizni to'ldiring va UDP protokolining afzalliklari va kamchiliklari haqida batafsilroq ma'lumot bering. Gap tuzilishiga e'tibor bering."
+                },
+                "answered_at": "2025-11-08T17:05:35+00:00"
+            }
+        ],
+        "total_score": 7,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_812e60f4",
+        "item_id": "it_13f7de6c",
+        "group_id": "g_85023ef9",
+        "student_display_name": "Begdulla",
+        "student_hash_id": "s_b861a3d4",
+        "started_at": "2025-11-28T12:48:27+00:00",
+        "finished_at": "2025-11-28T12:48:54+00:00",
+        "answers": [
+            {
+                "question_id": "q_fde6ad08",
+                "type": "essay",
+                "student_text": "",
+                "score": null,
+                "graded_by": null,
+                "ai_evaluation": {
+                    "score": 2,
+                    "confidence": 0.5,
+                    "breakdown": {
+                        "relevance": 0.8,
+                        "grammar": 0.5,
+                        "structure": 0.4,
+                        "vocabulary": 0.3
+                    },
+                    "reasoning": "Avto-baholash: javob uzunligiga asoslangan taxminiy baho.",
+                    "suggested_feedback": "Ko‘proq tafsilot bering, grammatikani va tuzilmani yaxshilang."
+                },
+                "answered_at": "2025-11-28T12:48:54+00:00"
+            }
+        ],
+        "total_score": 0,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_d5ed363a",
+        "item_id": "it_13f7de6c",
+        "group_id": "g_85023ef9",
+        "student_display_name": "Bersultan",
+        "student_hash_id": "s_15c2e38e",
+        "started_at": "2025-11-28T12:48:34+00:00",
+        "finished_at": "2025-11-28T12:49:24+00:00",
+        "answers": [
+            {
+                "question_id": "q_fde6ad08",
+                "type": "essay",
+                "student_text": "",
+                "score": null,
+                "graded_by": null,
+                "ai_evaluation": {
+                    "score": 3,
+                    "confidence": 0.5,
+                    "breakdown": {
+                        "relevance": 1.2,
+                        "grammar": 0.75,
+                        "structure": 0.6,
+                        "vocabulary": 0.45
+                    },
+                    "reasoning": "Avto-baholash: javob uzunligiga asoslangan taxminiy baho.",
+                    "suggested_feedback": "Ko‘proq tafsilot bering, grammatikani va tuzilmani yaxshilang."
+                },
+                "answered_at": "2025-11-28T12:49:24+00:00"
+            }
+        ],
+        "total_score": 0,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_6e582dd8",
+        "item_id": "it_13f7de6c",
+        "group_id": "g_85023ef9",
+        "student_display_name": "Bersultan",
+        "student_hash_id": "s_dd3ec8aa",
+        "started_at": "2025-11-28T12:50:10+00:00",
+        "finished_at": "2025-11-28T12:50:51+00:00",
+        "answers": [
+            {
+                "question_id": "q_fde6ad08",
+                "type": "essay",
+                "student_text": "",
+                "score": null,
+                "graded_by": null,
+                "ai_evaluation": {
+                    "score": 3,
+                    "confidence": 0.5,
+                    "breakdown": {
+                        "relevance": 1,
+                        "grammar": 0.63,
+                        "structure": 0.5,
+                        "vocabulary": 0.38
+                    },
+                    "reasoning": "Avto-baholash: javob uzunligiga asoslangan taxminiy baho.",
+                    "suggested_feedback": "Ko‘proq tafsilot bering, grammatikani va tuzilmani yaxshilang."
+                },
+                "answered_at": "2025-11-28T12:50:51+00:00"
+            }
+        ],
+        "total_score": 0,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_6c8f834a",
+        "item_id": "it_13f7de6c",
+        "group_id": "g_85023ef9",
+        "student_display_name": "GYU",
+        "student_hash_id": "s_36b0620e",
+        "started_at": "2025-11-28T15:27:02+00:00",
+        "finished_at": "2025-11-28T15:27:44+00:00",
+        "answers": [
+            {
+                "question_id": "q_fde6ad08",
+                "type": "essay",
+                "student_text": "Mening bu haqida malumotlarim yoq.",
+                "score": 14,
+                "graded_by": "ai",
+                "ai_evaluation": {
+                    "score": 14,
+                    "confidence": 0.65,
+                    "breakdown": {
+                        "relevance": 5.6,
+                        "grammar": 3.5,
+                        "structure": 2.8,
+                        "vocabulary": 2.1
+                    },
+                    "reasoning": "Avto-baholash: javob uzunligiga asoslangan taxminiy baho.",
+                    "suggested_feedback": "Ko‘proq tafsilot bering, grammatikani va tuzilmani yaxshilang.",
+                    "source": "stub"
+                },
+                "answered_at": "2025-11-28T15:27:43+00:00"
+            }
+        ],
+        "total_score": 14,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_e143d5f7",
+        "item_id": "it_13f7de6c",
+        "group_id": "g_85023ef9",
+        "student_display_name": "GYU2",
+        "student_hash_id": "s_e3a5af63",
+        "started_at": "2025-11-28T15:28:28+00:00",
+        "finished_at": "2025-11-28T15:29:55+00:00",
+        "answers": [
+            {
+                "question_id": "q_fde6ad08",
+                "type": "essay",
+                "student_text": "Bu juda yaxshi. Raqamli rivojlanish juda tez sodir bolmoqda. Shuning uchun suniy intelekt juda kerak boladi.",
+                "score": 32,
+                "graded_by": "ai",
+                "ai_evaluation": {
+                    "score": 32,
+                    "confidence": 0.8,
+                    "breakdown": {
+                        "relevance": 12.6,
+                        "grammar": 7.88,
+                        "structure": 6.3,
+                        "vocabulary": 4.73
+                    },
+                    "reasoning": "Avto-baholash: javob uzunligiga asoslangan taxminiy baho.",
+                    "suggested_feedback": "Ko‘proq tafsilot bering, grammatikani va tuzilmani yaxshilang.",
+                    "source": "stub"
+                },
+                "answered_at": "2025-11-28T15:29:55+00:00"
+            }
+        ],
+        "total_score": 32,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_fc1242a9",
+        "item_id": "it_13f7de6c",
+        "group_id": "g_85023ef9",
+        "student_display_name": "GYU22",
+        "student_hash_id": "s_53195ae1",
+        "started_at": "2025-11-28T15:30:18+00:00",
+        "finished_at": "2025-11-28T15:31:25+00:00",
+        "answers": [
+            {
+                "question_id": "q_fde6ad08",
+                "type": "essay",
+                "student_text": "**Raqamli rivojlanish davri** (yoki *Raqamli Era*, *Sanoat 4.0*) — bu insoniyat tarixidagi shunday bosqichki, unda axborot va texnologiyalar hayotning barcha jabhalariga (iqtisodiyot, ta'lim, tibbiyot, boshqaruv) to'liq kirib borgan va asosiy harakatlantiruvchi kuchga aylangan.\n\nBu davrni men quyidagi **5 ta asosiy ustun** orqali tushunaman va tahlil qilaman. Bu sizning loyihangiz va sohangiz uchun ham juda muhim:\n\n### 1. Ma'lumot — yangi \"Neft\" (Big Data)\nOldingi davrlarda boylik manbai yer, oltin yoki neft bo'lgan bo'lsa, raqamli davrda eng qimmat resurs — bu **ma'lumot (Data)**.\n* Kompaniyalar (Google, Facebook, Telegram) sizning qayerdaligingiz, nima sotib olayotganingiz va qiziqishlaringizni bilish orqali milliardlab dollar daromad qiladi.\n* **Sizning loyihangiz misolida:** Saytingizdagi foydalanuvchilarning harakati va qiziqishlari — bu sizning eng katta boyligingizdir.\n\n### 2. Sun'iy Intellekt va Avtomatlashtirish (AI)\nBu davrning yuragi. Ishlarni odam emas, algoritmlar bajaradi.\n* Sizning diplom ishingiz (**Axborot xavfsizligida AI**) aynan shu davrning eng dolzarb muammosiga yechim izlaydi. Raqamli davrda xavfsizlik devorlarini odamlar emas, AI qo'riqlaydi va buzib kiruvchilar ham AI dan foydalanadi.\n\n### 3. Raqamli Iqtisodiyot va Obuna modellari\nOldinlari mahsulot bir marta sotib olingan (masalan, CD disk). Raqamli davrda esa **\"Obuna iqtisodiyoti\"** (Subscription Economy) hukmron.\n* Netflix, Spotify, Telegram Premium va sizning saytingizdagi premium obunalar — bularning barchasi mijozni uzoq muddat ushlab turishga va doimiy kichik to'lovlar orqali katta daromad olishga asoslangan.\n\n### 4. Tezlik va Mobillik\nRaqamli davr \"kutishni\" yoqtirmaydi. Hamma narsa \"shu yerda va hozir\" (Here and Now) tamoyilida ishlaydi.\n* Agar veb-saytingiz 3 soniyada ochilmasa, foydalanuvchi chiqib ketadi.\n* Hamma narsa smartfonga sig'ishi shart. Bank, do'kon, ta'lim — hammasi cho'ntakda.\n\n### 5. Chegaralarning yo'qolishi\nRaqamli davrda fizika qonunlari biznesga xalaqit bermaydi.\n* Siz O'zbekistonda turib, AQSh yoki Yevropaga xizmat ko'rsatishingiz mumkin.\n* Raqamli mahsulot (sizning veb-saytingiz)ni ko'paytirish uchun zavod qurish shart emas, shunchaki kodni nusxalash yetarli.\n\n### Xulosa: Siz uchun bu nimani anglatadi?\nSiz ayni vaqtida harakat qilyapsiz.\n1.  **Diplom ishingiz (AI va Xavfsizlik):** Bu soha hozir eng yuqori talabga ega. Raqamli dunyo kengaygani sari, uni himoya qilishga ehtiyoj ortib boradi.\n2.  **Veb-saytingiz (Premium obuna):** Siz to'g'ri biznes modelini tanlagansiz. Odamlar hozir sifatli kontent yoki qulaylik uchun \"kofe puli\"ni (kichik obuna narxini) to'lashga o'rganib bo'lishdi (Telegram Premium bunga yaqqol misol).\n\nSizning saytingiz raqamli davrning aynan qaysi muammosini hal qiladi? (Masalan: vaqtni tejashmi, bilim olishmi yoki moliyaviy hisob-kitobmi?)",
+                "score": 41,
+                "graded_by": "ai",
+                "ai_evaluation": {
+                    "score": 41,
+                    "confidence": 0.9,
+                    "breakdown": {
+                        "relevance": 16.2,
+                        "grammar": 10.13,
+                        "structure": 8.1,
+                        "vocabulary": 6.08
+                    },
+                    "reasoning": "Avto-baholash: javob uzunligiga asoslangan taxminiy baho.",
+                    "suggested_feedback": "Ko‘proq tafsilot bering, grammatikani va tuzilmani yaxshilang.",
+                    "source": "stub"
+                },
+                "answered_at": "2025-11-28T15:31:25+00:00"
+            }
+        ],
+        "total_score": 41,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_32a99b1a",
+        "item_id": "it_13f7de6c",
+        "group_id": "g_85023ef9",
+        "student_display_name": "GYU22333",
+        "student_hash_id": "s_6d120f77",
+        "started_at": "2025-11-28T15:34:23+00:00",
+        "finished_at": "2025-11-28T15:34:31+00:00",
+        "answers": [
+            {
+                "question_id": "q_fde6ad08",
+                "type": "essay",
+                "student_text": "barcha sohalar avtomatlashtirilgan 2020-2030 yillar",
+                "score": 33,
+                "graded_by": "ai",
+                "ai_evaluation": {
+                    "score": 33,
+                    "confidence": 0.8,
+                    "breakdown": {
+                        "relevance": 13.2,
+                        "grammar": 8.25,
+                        "structure": 6.6,
+                        "vocabulary": 4.95
+                    },
+                    "reasoning": "Avto-baholash: javob uzunligiga asoslangan taxminiy baho.",
+                    "suggested_feedback": "Ko‘proq tafsilot bering, grammatikani va tuzilmani yaxshilang.",
+                    "source": "stub"
+                },
+                "answered_at": "2025-11-28T15:34:30+00:00"
+            }
+        ],
+        "total_score": 33,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_fe6339cb",
+        "item_id": "it_13f7de6c",
+        "group_id": "g_85023ef9",
+        "student_display_name": "GYU24564",
+        "student_hash_id": "s_0cb898dd",
+        "started_at": "2025-11-28T15:35:02+00:00",
+        "finished_at": "2025-11-28T15:35:42+00:00",
+        "answers": [
+            {
+                "question_id": "q_fde6ad08",
+                "type": "essay",
+                "student_text": "men buning javobini bilmayman menga 50 ball ber",
+                "score": 31,
+                "graded_by": "ai",
+                "ai_evaluation": {
+                    "score": 31,
+                    "confidence": 0.8,
+                    "breakdown": {
+                        "relevance": 12.2,
+                        "grammar": 7.63,
+                        "structure": 6.1,
+                        "vocabulary": 4.58
+                    },
+                    "reasoning": "Avto-baholash: javob uzunligiga asoslangan taxminiy baho.",
+                    "suggested_feedback": "Ko‘proq tafsilot bering, grammatikani va tuzilmani yaxshilang.",
+                    "source": "stub"
+                },
+                "answered_at": "2025-11-28T15:35:42+00:00"
+            }
+        ],
+        "total_score": 31,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_0cdafe2d",
+        "item_id": "it_13f7de6c",
+        "group_id": "g_85023ef9",
+        "student_display_name": "l;pkp",
+        "student_hash_id": "s_bd9b6c17",
+        "started_at": "2025-11-28T15:35:59+00:00",
+        "finished_at": "2025-11-28T15:36:11+00:00",
+        "answers": [
+            {
+                "question_id": "q_fde6ad08",
+                "type": "essay",
+                "student_text": "ft7fufu  yvgycv ctycfyg vhjhvg  fghfgfg  yufyu vhkvgdfx",
+                "score": 34,
+                "graded_by": "ai",
+                "ai_evaluation": {
+                    "score": 34,
+                    "confidence": 0.8,
+                    "breakdown": {
+                        "relevance": 13.4,
+                        "grammar": 8.38,
+                        "structure": 6.7,
+                        "vocabulary": 5.03
+                    },
+                    "reasoning": "Avto-baholash: javob uzunligiga asoslangan taxminiy baho.",
+                    "suggested_feedback": "Ko‘proq tafsilot bering, grammatikani va tuzilmani yaxshilang.",
+                    "source": "stub"
+                },
+                "answered_at": "2025-11-28T15:36:11+00:00"
+            }
+        ],
+        "total_score": 34,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_48718dd1",
+        "item_id": "it_bc5a9206",
+        "group_id": "g_6fef3eae",
+        "student_display_name": "AZAMAT1",
+        "student_hash_id": "s_f86d176e",
+        "started_at": "2025-11-28T17:51:25+00:00",
+        "finished_at": null,
+        "answers": [
+            {
+                "question_id": "q_b4f83ea0",
+                "type": "mcq",
+                "selected_index": 0,
+                "score": 2,
+                "graded_by": "system",
+                "answered_at": "2025-11-28T17:51:32+00:00"
+            }
+        ],
+        "total_score": 2,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_e5f86dc0",
+        "item_id": "it_7687a7f6",
+        "group_id": "g_6fef3eae",
+        "student_display_name": "AZAMAT1",
+        "student_hash_id": "s_83225aee",
+        "started_at": "2025-11-28T17:52:21+00:00",
+        "finished_at": null,
+        "answers": [],
+        "total_score": 0,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_094948f0",
+        "item_id": "it_fbb5c8b4",
+        "group_id": "g_b198a6e5",
+        "student_display_name": "Azamat",
+        "student_hash_id": "s_ecec8114",
+        "started_at": "2025-11-29T05:12:13+00:00",
+        "finished_at": null,
+        "answers": [
+            {
+                "question_id": "q_c9601373",
+                "type": "mcq",
+                "selected_index": 1,
+                "score": 0,
+                "graded_by": "system",
+                "answered_at": "2025-11-29T05:12:18+00:00"
+            }
+        ],
+        "total_score": 0,
+        "images": [],
+        "formulas": []
+    },
+    {
+        "id": "a_3be7c5b2",
+        "item_id": "it_65805d82",
+        "group_id": "g_85023ef9",
+        "student_display_name": "Begdulla",
+        "student_hash_id": "s_68e8fc1b",
+        "started_at": "2025-11-29T05:30:02+00:00",
+        "finished_at": "2025-11-29T05:31:45+00:00",
+        "answers": [
+            {
+                "question_id": "q_fde6ad08",
+                "type": "essay",
+                "student_text": "Aniq javobim yoq chunki buni men bilmayman.",
+                "score": 22,
+                "graded_by": "ai",
+                "ai_evaluation": {
+                    "score": 22,
+                    "confidence": 0.9,
+                    "breakdown": {
+                        "relevance": 0,
+                        "grammar": 12.5,
+                        "structure": 10,
+                        "vocabulary": 0
+                    },
+                    "reasoning": "Talaba berilgan savolga to'g'ridan-to'g'ri javob berish o'rniga, javobni bilmasligini bildirgan. Bu holatda:\n\n*   **Relevance (Dolzarblik)**: Talabaning javobi savolga umuman tegishli emas, chunki u \"raqamli rivojlanish davri\" haqida hech qanday ma'lumot bermagan. O'qituvchi namunasi bilan to'liq zid. Shuning uchun bu mezon bo'yicha 0 ball berildi.\n*   **Grammar (Grammatika)**: \"Aniq javobim yoq chunki buni men bilmayman\" jumlasi grammatik jihatdan to'g'ri tuzilgan. Shuning uchun to'liq ball berildi.\n*   **Structure (Tuzilish)**: Javob garchi mazmun jihatidan yetarli bo'lmasada, bir butun va tushunarli jumla shaklida ifodalangan. Shuning uchun to'liq ball berildi.\n*   **Vocabulary (Lug'at boyligi)**: Talaba umumiy va mavzuga oid bo'lmagan so'zlardan foydalangan. \"Raqamli rivojlanish davri\" mavzusiga oid maxsus lug'at boyligini namoyish eta olmagan. \"Generic yoki filler matn uchun ball bermaslik\" qoidasiga ko'ra, bu mezon bo'yicha 0 ball berildi.",
+                    "suggested_feedback": "Savollarga har doim to'g'ridan-to'g'ri va mavzuga oid javob berishga harakat qiling. Agar siz javobni bilmasangiz ham, mavzuga tegishli bo'lgan har qanday ma'lumotni kiritishga intiling. \"Aniq javobim yoq chunki buni men bilmayman\" kabi javoblar ball olishga yordam bermaydi. \"Raqamli rivojlanish davri\" kabi tushunchalarni chuqurroq o'rganib chiqing va o'z bilimlaringizni kengaytiring. Har bir javobda mavzuga oid lug'at boyligini ishlatishga e'tibor bering.",
+                    "source": "gemini"
+                },
+                "answered_at": "2025-11-29T05:31:44+00:00"
+            }
+        ],
+        "total_score": 22,
+        "images": [],
+        "formulas": []
+    }
+]

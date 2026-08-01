@@ -1,0 +1,49 @@
+/* Student interface styles */
+.student-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.question-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.answer-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.options-list {
+  margin-bottom: 15px;
+}
+
+.form-check {
+  padding: 8px 0;
+}
+
+/* Media gallery styles for student interface */
+.media-reference {
+  display: inline-block;
+  background-color: #f0f7ff;
+  border: 1px solid #cce5ff;
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin: 0 2px;
+  font-size: 0.9em;
+  color: #0066cc;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .question-card {
+    padding: 15px;
+  }
+}
