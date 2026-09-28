@@ -31,6 +31,16 @@ jobs:
       - name: Test
         run: flutter test
 
+      - name: Check Gemini key secret
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          if [ -n "$GEMINI_API_KEY" ]; then
+            echo "GEMINI_API_KEY found: the key will be built into the APK."
+          else
+            echo "::warning::GEMINI_API_KEY secret is not set; users must enter the key in app settings."
+          fi
+
       - name: Build APK
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
