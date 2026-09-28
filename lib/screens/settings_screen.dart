@@ -79,7 +79,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               decoration: InputDecoration(
                 hintText: AppConfig.buildApiKey.isNotEmpty
                     ? "Ilovaga o'rnatilgan kalit ishlatiladi"
-                    : 'AIza...',
+                    : 'API kalitni kiriting',
                 suffixIcon: IconButton(
                   onPressed: () => setState(() => _obscure = !_obscure),
                   icon: Icon(_obscure ? Icons.visibility_outlined : Icons.visibility_off_outlined),

@@ -36,7 +36,7 @@ class _AnalyzingScreenState extends State<AnalyzingScreen> with TickerProviderSt
   // Javob kelguncha taxminiy progress (0 -> 0.9)
   late final AnimationController _progress = AnimationController(
     vsync: this,
-    duration: const Duration(seconds: 18),
+    duration: const Duration(seconds: 30),
   );
 
   GeminiException? _error;

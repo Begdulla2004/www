@@ -22,7 +22,13 @@ class GeminiService {
 
   final http.Client _client;
 
-  GeminiService({http.Client? client}) : _client = client ?? http.Client();
+  /// Model band bo'lsa (503/429) keyingi urinishdan oldingi kutish.
+  final Duration retryDelay;
+
+  GeminiService({http.Client? client, this.retryDelay = const Duration(seconds: 2)})
+    : _client = client ?? http.Client();
+
+  static bool _isBusy(int status) => status == 429 || status == 500 || status >= 502;
 
   /// Barg rasmini Gemini'ga yuboradi va JSON tahlilni qaytaradi.
   Future<Map<String, dynamic>> analyzeLeaf({
@@ -54,31 +60,39 @@ class GeminiService {
       'generationConfig': {'temperature': 0.2, 'responseMimeType': 'application/json'},
     };
 
-    final http.Response res;
-    try {
-      res = await _client
-          .post(
-            Uri.parse('$_base/models/${model.trim()}:generateContent'),
-            headers: {'Content-Type': 'application/json', 'x-goog-api-key': apiKey.trim()},
-            body: jsonEncode(body),
-          )
-          .timeout(const Duration(seconds: 120));
-    } on TimeoutException {
-      throw const GeminiException(
-        "Server uzoq vaqt javob bermadi. Internetni tekshirib, qayta urinib ko'ring.",
-      );
-    } on SocketException {
-      throw const GeminiException(
-        "Internetga ulanib bo'lmadi. Ulanishni tekshirib, qayta urinib ko'ring.",
-      );
-    } on http.ClientException {
-      throw const GeminiException(
-        "Internetga ulanib bo'lmadi. Ulanishni tekshirib, qayta urinib ko'ring.",
-      );
+    // Tanlangan model band bo'lsa, zaxira modellar bilan qayta urinadi.
+    final models = [model.trim(), ...AppConfig.fallbackModels.where((m) => m != model.trim())];
+    late http.Response res;
+    var usedModel = models.first;
+    for (var i = 0; i < models.length; i++) {
+      usedModel = models[i];
+      if (i > 0) await Future<void>.delayed(retryDelay);
+      try {
+        res = await _client
+            .post(
+              Uri.parse('$_base/models/$usedModel:generateContent'),
+              headers: {'Content-Type': 'application/json', 'x-goog-api-key': apiKey.trim()},
+              body: jsonEncode(body),
+            )
+            .timeout(const Duration(seconds: 120));
+      } on TimeoutException {
+        throw const GeminiException(
+          "Server uzoq vaqt javob bermadi. Internetni tekshirib, qayta urinib ko'ring.",
+        );
+      } on SocketException {
+        throw const GeminiException(
+          "Internetga ulanib bo'lmadi. Ulanishni tekshirib, qayta urinib ko'ring.",
+        );
+      } on http.ClientException {
+        throw const GeminiException(
+          "Internetga ulanib bo'lmadi. Ulanishni tekshirib, qayta urinib ko'ring.",
+        );
+      }
+      if (!_isBusy(res.statusCode)) break;
     }
 
     if (res.statusCode != 200) {
-      throw _httpError(res, model);
+      throw _httpError(res, usedModel);
     }
 
     final dynamic data;
@@ -226,7 +240,7 @@ Respond ONLY with a JSON object with exactly this structure:
   "risk_percent": 0-100,
   "affected_percent": 0-100,
   "severity": "low | medium | high",
-  "stage": "stage of the disease, e.g. early / developing / advanced",
+  "stage": "stage of the disease written in the target language (early, developing or advanced)",
   "summary": "2-3 sentence conclusion for the farmer",
   "description": "what this disease is, which crops it affects, how it spreads",
   "symptoms": ["visible sign seen on this photo", "..."],

@@ -111,4 +111,42 @@ void main() {
       throwsA(isA<GeminiException>().having((e) => e.isKeyProblem, 'isKeyProblem', true)),
     );
   });
+
+  test('analyzeLeaf falls back to another model when busy', () async {
+    final called = <String>[];
+    final client = MockClient((req) async {
+      called.add(req.url.pathSegments.last);
+      if (called.length == 1) {
+        return http.Response(
+          jsonEncode({
+            'error': {'message': 'high demand'},
+          }),
+          503,
+        );
+      }
+      return http.Response(
+        jsonEncode({
+          'candidates': [
+            {
+              'content': {
+                'parts': [
+                  {'text': '{"is_plant": true}'},
+                ],
+              },
+            },
+          ],
+        }),
+        200,
+      );
+    });
+    final result = await GeminiService(client: client, retryDelay: Duration.zero).analyzeLeaf(
+      imageBytes: utf8.encode('img'),
+      mimeType: 'image/jpeg',
+      apiKey: 'KEY',
+      model: 'busy-model',
+      language: 'uz',
+    );
+    expect(result['is_plant'], true);
+    expect(called, ['busy-model:generateContent', 'gemini-2.5-flash:generateContent']);
+  });
 }
