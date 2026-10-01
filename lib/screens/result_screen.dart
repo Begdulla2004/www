@@ -217,7 +217,7 @@ class _ResultScreenState extends State<ResultScreen> {
             OutlinedButton.icon(
               onPressed: () => _push(RecommendationsScreen(diagnosis: d)),
               icon: const Icon(Icons.medical_services_outlined),
-              label: const Text('Tavsiyalar va dorilar'),
+              label: const Text("Dorilar va o'g'itlar"),
             ),
           ],
         ),

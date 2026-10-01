@@ -220,12 +220,14 @@ Tasks:
 3. Decide whether it is healthy or has a problem: fungal, bacterial or viral disease, pest damage, nutrient deficiency, or abiotic stress (drought, sunburn, frost, over-watering, chemical burn).
 4. Find EVERY visibly damaged, diseased, dried, spotted or chewed area in the image and return each one with a bounding box "box_2d": [ymin, xmin, ymax, xmax] normalized to 0-1000 relative to the image. At most 8 areas. Describe what is wrong in each area.
 5. Estimate the percentage of visible leaf area that is damaged ("affected_percent") and the risk that the problem spreads or harms the harvest ("risk_percent").
-6. Give practical, step-by-step treatment and care advice a farmer can follow. Recommend specific medicines (fungicides, bactericides, insecticides, acaricides or fertilizers) by active ingredient and common trade names sold in Uzbekistan / Central Asia, with dosage (e.g. per 10 L of water or per hectare), how and when to apply, number of treatments and the waiting period before harvest. Prefer safer and biological options where they work.
-7. If the plant is healthy, say so, and give care and prevention advice instead of medicines.
+6. Give practical, step-by-step treatment and care advice a farmer can follow.
+7. SPRAYING MEDICINES ("medicines"): if the problem is a disease or pest, recommend 1-3 specific plant protection products (fungicides, bactericides, insecticides, acaricides) registered and sold in Uzbekistan / Central Asia. For each give: trade name(s), active ingredient with concentration, what it treats, exact dose per 10 L of water AND per hectare, how and at what time of day to spray, number of sprays and interval in days, and the waiting period (days) before harvest. Prefer safer and biological options where they work. Use only real products and realistic label doses; never invent products. Leave "medicines" empty for nutrient deficiency, abiotic stress or a healthy plant.
+8. FERTILIZERS ("fertilizers"): ALWAYS recommend 2-4 fertilizers suited to this crop, its likely growth stage and the diagnosed problem, also for healthy plants. Use fertilizers common in Uzbekistan: ammiakli selitra (ammonium nitrate, N 34%), kaliyli selitra (potassium nitrate, N 13% + K2O 46%), kalsiyli selitra (calcium nitrate, N 15.5% + Ca 19%), karbamid (urea, N 46%), ammofos (N 11% + P2O5 52%), superfosfat, kaliy sulfat, complex NPK and micro-fertilizers (iron chelate, zinc, boron, magnesium sulfate) or organic (chirigan go'ng, kompost). For each give the nutrients, why it helps, the dose (per hectare and per square metre for soil application; per 10 L of water for foliar feeding), the method (soil, with irrigation water, or foliar spray) and when to apply. Warn against too much nitrogen when it would make the disease worse.
+9. If the plant is healthy, say so, and give care, prevention and fertilizer advice instead of medicines.
 If you are not sure, give the most likely diagnosis, lower "confidence", and mention alternatives in "description".
 
 Write ALL human-readable text values in $language, in simple clear words for farmers.
-Keep enum fields ("disease_type", "severity", "category") exactly in English as listed.
+Keep enum fields ("disease_type", "severity", "category", fertilizer "type") exactly in English as listed.
 
 Respond ONLY with a JSON object with exactly this structure:
 {
@@ -253,7 +255,10 @@ Respond ONLY with a JSON object with exactly this structure:
     {"title": "short action", "detail": "how to do it", "category": "fungicide | insecticide | remove | water | air | fertilizer | sanitation | other"}
   ],
   "medicines": [
-    {"name": "trade name(s)", "active_ingredient": "active substance", "dosage": "dose", "usage": "how, when, how often, waiting period"}
+    {"name": "trade name(s)", "active_ingredient": "active substance and concentration", "purpose": "what it treats", "dosage": "dose per 10 L of water", "per_hectare": "dose per hectare", "usage": "how and when to spray", "schedule": "number of sprays and interval", "waiting_period": "days before harvest"}
+  ],
+  "fertilizers": [
+    {"name": "fertilizer name", "type": "nitrogen | phosphorus | potassium | calcium | complex | micro | organic", "nutrients": "e.g. N 34%", "purpose": "why it helps this plant", "dosage": "dose per hectare / per m2 / per 10 L", "method": "soil, irrigation water or foliar spray", "timing": "when and how often"}
   ],
   "prevention": ["prevention measure", "..."]
 }

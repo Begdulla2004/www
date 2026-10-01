@@ -30,6 +30,9 @@ const _aiJson = {
   'medicines': [
     {'name': 'Ridomil Gold', 'active_ingredient': 'metalaksil', 'dosage': '25 g / 10 L'},
   ],
+  'fertilizers': [
+    {'name': 'Kaliyli selitra', 'type': 'Potassium', 'nutrients': 'N 13%, K 46%'},
+  ],
 };
 
 void main() {
@@ -43,6 +46,8 @@ void main() {
     expect(d.affectedAreas[1].box, isNull);
     expect(d.medicines.single.activeIngredient, 'metalaksil');
     expect(d.severityLabel, 'Yuqori');
+    expect(d.fertilizers.single.typeLabel, "Kaliyli o'g'it");
+    expect(Diagnosis.fromJson({'is_plant': true}).fertilizers, isEmpty);
   });
 
   test('Diagnosis survives toJson/fromJson round trip', () {

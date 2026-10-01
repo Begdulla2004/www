@@ -1,5 +1,5 @@
 class AppConfig {
-  static const appName = 'Shomanay';
+  static const appName = "AI O'simlik Diagnostikasi";
   static const version = '1.0.0';
 
   /// Build paytida beriladigan kalit:

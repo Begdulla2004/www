@@ -196,7 +196,7 @@ class ProfileScreen extends StatelessWidget {
                     showDivider: false,
                     onTap: () => showAboutDialog(
                       context: context,
-                      applicationName: 'Shomanay',
+                      applicationName: AppConfig.appName,
                       applicationVersion: AppConfig.version,
                       applicationIcon: ClipRRect(
                         borderRadius: BorderRadius.circular(12),

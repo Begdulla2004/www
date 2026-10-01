@@ -155,6 +155,19 @@ const tipGroups = [
     ],
   ),
   TipGroup(
+    title: "Selitra va asosiy o'g'itlar",
+    iconName: 'fertilizer',
+    tips: [
+      "Ammiakli selitra (N 34%) — o'sish davri uchun azot. Tuproqqa 1 m² ga 15–20 g, sug'orishdan oldin beriladi.",
+      "Kaliyli selitra (N 13%, K 46%) — gullash va meva tugish davrida. Barg orqali 10 L suvga 50–100 g.",
+      "Kalsiyli selitra (N 15,5%, Ca 19%) — pomidor va qalampirda mevaning uchki chirishiga qarshi. Barg orqali 10 L suvga 20–50 g.",
+      "Karbamid (N 46%) — tez ta'sir qiluvchi azot. Barg orqali 10 L suvga 30–50 g, kuchli quyoshda purkamang.",
+      "Ammofos va superfosfat — fosfor: ildiz va gullash uchun, asosan ekishdan oldin tuproqqa solinadi.",
+      "Zamburug' kasalligi bor o'simlikka ortiqcha azot bermang — barglar yumshab, kasallik kuchayadi.",
+      "Aniq me'yor ekin, tuproq va o'sish davriga bog'liq — qadoqdagi yo'riqnomaga amal qiling.",
+    ],
+  ),
+  TipGroup(
     title: 'Parvarish',
     iconName: 'care',
     tips: [

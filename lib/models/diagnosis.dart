@@ -66,31 +66,106 @@ class Recommendation {
   Map<String, dynamic> toJson() => {'title': title, 'detail': detail, 'category': category};
 }
 
+/// Purkash uchun dori (fungitsid, insektitsid va h.k.).
 class Medicine {
   final String name;
   final String activeIngredient;
+  final String purpose;
+
+  /// 10 litr suvga me'yor
   final String dosage;
+  final String perHectare;
+
+  /// Qanday va qachon purkash
   final String usage;
+  final String schedule;
+  final String waitingPeriod;
 
   const Medicine({
     required this.name,
     required this.activeIngredient,
     required this.dosage,
     required this.usage,
+    this.purpose = '',
+    this.perHectare = '',
+    this.schedule = '',
+    this.waitingPeriod = '',
   });
 
   factory Medicine.fromJson(Map<String, dynamic> j) => Medicine(
     name: _str(j['name']),
     activeIngredient: _str(j['active_ingredient']),
+    purpose: _str(j['purpose']),
     dosage: _str(j['dosage']),
+    perHectare: _str(j['per_hectare']),
     usage: _str(j['usage']),
+    schedule: _str(j['schedule']),
+    waitingPeriod: _str(j['waiting_period']),
   );
 
   Map<String, dynamic> toJson() => {
     'name': name,
     'active_ingredient': activeIngredient,
+    'purpose': purpose,
     'dosage': dosage,
+    'per_hectare': perHectare,
     'usage': usage,
+    'schedule': schedule,
+    'waiting_period': waitingPeriod,
+  };
+}
+
+/// O'g'it (selitra, karbamid, superfosfat va h.k.).
+class Fertilizer {
+  final String name;
+
+  /// nitrogen | phosphorus | potassium | calcium | complex | micro | organic
+  final String type;
+  final String nutrients;
+  final String purpose;
+  final String dosage;
+  final String method;
+  final String timing;
+
+  const Fertilizer({
+    required this.name,
+    required this.type,
+    required this.nutrients,
+    required this.purpose,
+    required this.dosage,
+    required this.method,
+    required this.timing,
+  });
+
+  factory Fertilizer.fromJson(Map<String, dynamic> j) => Fertilizer(
+    name: _str(j['name']),
+    type: _str(j['type']).toLowerCase(),
+    nutrients: _str(j['nutrients']),
+    purpose: _str(j['purpose']),
+    dosage: _str(j['dosage']),
+    method: _str(j['method']),
+    timing: _str(j['timing']),
+  );
+
+  Map<String, dynamic> toJson() => {
+    'name': name,
+    'type': type,
+    'nutrients': nutrients,
+    'purpose': purpose,
+    'dosage': dosage,
+    'method': method,
+    'timing': timing,
+  };
+
+  String get typeLabel => switch (type) {
+    'nitrogen' => "Azotli o'g'it",
+    'phosphorus' => "Fosforli o'g'it",
+    'potassium' => "Kaliyli o'g'it",
+    'calcium' => "Kalsiyli o'g'it",
+    'complex' => "Kompleks o'g'it",
+    'micro' => "Mikroo'g'it",
+    'organic' => "Organik o'g'it",
+    _ => "O'g'it",
   };
 }
 
@@ -119,6 +194,7 @@ class Diagnosis {
   final List<String> treatment;
   final List<Recommendation> recommendations;
   final List<Medicine> medicines;
+  final List<Fertilizer> fertilizers;
   final List<String> prevention;
 
   const Diagnosis({
@@ -145,6 +221,7 @@ class Diagnosis {
     required this.treatment,
     required this.recommendations,
     required this.medicines,
+    this.fertilizers = const [],
     required this.prevention,
   });
 
@@ -175,6 +252,7 @@ class Diagnosis {
       treatment: _strings(j['treatment']),
       recommendations: _maps(j['recommendations']).map(Recommendation.fromJson).toList(),
       medicines: _maps(j['medicines']).map(Medicine.fromJson).toList(),
+      fertilizers: _maps(j['fertilizers']).map(Fertilizer.fromJson).toList(),
       prevention: _strings(j['prevention']),
     );
   }
@@ -203,6 +281,7 @@ class Diagnosis {
     'treatment': treatment,
     'recommendations': recommendations.map((r) => r.toJson()).toList(),
     'medicines': medicines.map((m) => m.toJson()).toList(),
+    'fertilizers': fertilizers.map((f) => f.toJson()).toList(),
     'prevention': prevention,
   };
 

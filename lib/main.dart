@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'config.dart';
 import 'screens/splash_screen.dart';
 import 'services/app_state.dart';
 import 'theme.dart';
@@ -18,7 +19,7 @@ class ShomanayApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Shomanay',
+      title: AppConfig.appName,
       debugShowCheckedModeBanner: false,
       theme: buildTheme(),
       home: const SplashScreen(),

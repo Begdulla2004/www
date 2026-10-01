@@ -25,7 +25,7 @@ class RecommendationsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final d = diagnosis;
     return Scaffold(
-      appBar: AppBar(title: const Text('Tavsiya etilgan choralar')),
+      appBar: AppBar(title: const Text('Tavsiyalar')),
       body: SafeArea(
         child: Column(
           children: [
@@ -33,7 +33,7 @@ class RecommendationsScreen extends StatelessWidget {
               child: ListView(
                 padding: const EdgeInsets.fromLTRB(20, 4, 20, 16),
                 children: [
-                  if (d.recommendations.isEmpty && d.medicines.isEmpty)
+                  if (d.recommendations.isEmpty && d.medicines.isEmpty && d.fertilizers.isEmpty)
                     const Padding(
                       padding: EdgeInsets.only(top: 40),
                       child: Text(
@@ -42,6 +42,8 @@ class RecommendationsScreen extends StatelessWidget {
                         style: TextStyle(color: AppColors.muted),
                       ),
                     ),
+                  if (d.recommendations.isNotEmpty)
+                    const SectionTitle('Chora-tadbirlar', icon: Icons.checklist),
                   for (final r in d.recommendations)
                     Padding(
                       padding: const EdgeInsets.only(bottom: 10),
@@ -78,14 +80,25 @@ class RecommendationsScreen extends StatelessWidget {
                       ),
                     ),
                   if (d.medicines.isNotEmpty) ...[
-                    const SectionTitle('Tavsiya etilgan dorilar', icon: Icons.medication_outlined),
+                    const SectionTitle(
+                      'Dorilash (purkash) tavsiyalari',
+                      icon: Icons.medication_outlined,
+                    ),
                     for (final m in d.medicines)
                       Padding(
                         padding: const EdgeInsets.only(bottom: 10),
                         child: _MedicineCard(medicine: m),
                       ),
                   ],
-                  if (d.medicines.isNotEmpty || !d.isHealthy)
+                  if (d.fertilizers.isNotEmpty) ...[
+                    const SectionTitle("O'g'itlash tavsiyalari", icon: Icons.grass),
+                    for (final f in d.fertilizers)
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: _FertilizerCard(fertilizer: f),
+                      ),
+                  ],
+                  if (d.medicines.isNotEmpty || d.fertilizers.isNotEmpty || !d.isHealthy)
                     Container(
                       margin: const EdgeInsets.only(top: 8),
                       padding: const EdgeInsets.all(14),
@@ -101,9 +114,10 @@ class RecommendationsScreen extends StatelessWidget {
                           SizedBox(width: 10),
                           Expanded(
                             child: Text(
-                              "Tavsiyalar AI tomonidan berilgan. Dorilarni ishlatishdan oldin "
-                              "yorliqdagi ko'rsatmalarni o'qing, himoya vositalaridan foydalaning "
-                              "va imkon bo'lsa agronom bilan maslahatlashing.",
+                              "Tavsiyalar AI tomonidan berilgan. Dori va o'g'itlarni ishlatishdan oldin "
+                              "qadoqdagi yo'riqnomani o'qing, me'yordan oshirmang, himoya "
+                              "vositalaridan foydalaning va imkon bo'lsa agronom bilan "
+                              "maslahatlashing.",
                               style: TextStyle(fontSize: 13, height: 1.4),
                             ),
                           ),
@@ -139,6 +153,60 @@ class _MedicineCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final m = medicine;
+    return _InfoCard(
+      icon: Icons.science_outlined,
+      title: m.name,
+      subtitle: m.activeIngredient.isEmpty ? '' : "Ta'sir etuvchi modda: ${m.activeIngredient}",
+      lines: [
+        (Icons.healing_outlined, 'Nimaga qarshi', m.purpose),
+        (Icons.water_drop_outlined, '10 L suvga', m.dosage),
+        (Icons.agriculture_outlined, 'Gektariga', m.perHectare),
+        (Icons.schedule, "Qo'llash", m.usage),
+        (Icons.repeat, 'Necha marta', m.schedule),
+        (Icons.hourglass_bottom, 'Hosilgacha kutish', m.waitingPeriod),
+      ],
+    );
+  }
+}
+
+class _FertilizerCard extends StatelessWidget {
+  final Fertilizer fertilizer;
+
+  const _FertilizerCard({required this.fertilizer});
+
+  @override
+  Widget build(BuildContext context) {
+    final f = fertilizer;
+    return _InfoCard(
+      icon: Icons.grass,
+      title: f.name,
+      subtitle: [f.typeLabel, f.nutrients].where((e) => e.isNotEmpty).join(' • '),
+      lines: [
+        (Icons.eco_outlined, 'Foydasi', f.purpose),
+        (Icons.straighten, "Me'yori", f.dosage),
+        (Icons.touch_app_outlined, 'Qanday beriladi', f.method),
+        (Icons.event_outlined, 'Qachon', f.timing),
+      ],
+    );
+  }
+}
+
+class _InfoCard extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final String subtitle;
+  final List<(IconData, String, String)> lines;
+
+  const _InfoCard({
+    required this.icon,
+    required this.title,
+    required this.subtitle,
+    required this.lines,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final visible = lines.where((l) => l.$3.isNotEmpty).toList();
     return Panel(
       padding: const EdgeInsets.all(14),
       child: Column(
@@ -146,33 +214,26 @@ class _MedicineCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              const IconBadge(Icons.science_outlined, size: 38),
+              IconBadge(icon, size: 38),
               const SizedBox(width: 12),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      m.name,
+                      title,
                       style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 15.5),
                     ),
-                    if (m.activeIngredient.isNotEmpty)
-                      Text(
-                        "Ta'sir etuvchi modda: ${m.activeIngredient}",
-                        style: const TextStyle(color: AppColors.muted, fontSize: 13),
-                      ),
+                    if (subtitle.isNotEmpty)
+                      Text(subtitle, style: const TextStyle(color: AppColors.muted, fontSize: 13)),
                   ],
                 ),
               ),
             ],
           ),
-          if (m.dosage.isNotEmpty) ...[
-            const SizedBox(height: 10),
-            _Line(icon: Icons.straighten, title: 'Me\'yori', text: m.dosage),
-          ],
-          if (m.usage.isNotEmpty) ...[
-            const SizedBox(height: 6),
-            _Line(icon: Icons.schedule, title: "Qo'llash", text: m.usage),
+          for (final l in visible) ...[
+            const SizedBox(height: 7),
+            _Line(icon: l.$1, title: l.$2, text: l.$3),
           ],
         ],
       ),
