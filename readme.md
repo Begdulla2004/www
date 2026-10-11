@@ -43,6 +43,11 @@ data/          # JSON storage (dev/proto uchun)
 - `api/attempts.php`: start_attempt, upload_image, save_formula, delete_media_item, get_media_items, submit_mcq_answer, submit_essay_answer
 - `api/ai_grade.php`: AI baholash (Gemini)
 
+## 7A diagnostika moduli
+- O‘quvchilar: `/7a/` — sinf kodi → ism → tanishuv so‘rovnomasi / kirish testi (A) / yakuniy test (B) / anonim fikr
+- Ustoz: `/7a/admin.php` — natijalar, darajalar, o‘sish (g), o‘quvchi kartasi, CSV (ruxsat: `.env` → `SINF7A_USTOZ`, standart `Begdulla`)
+- Savollar va barcha qo‘llanmalar: `7A-diagnostika/` (boshlash: `7A-diagnostika/README.md`); javoblar `data/7a/` da saqlanadi (gitignore)
+
 ## AI Baholash
 - `.env` ichida `GEMINI_API_KEY` shart.
 - Serverda kalit bo‘lmasa, AI chaqiruv stubga qaytadi va minimal local baholash ishlatiladi.
