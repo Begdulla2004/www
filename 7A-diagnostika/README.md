@@ -61,28 +61,38 @@ Shu hafta 3 ta savolga aniq javob topasiz:
 └── tools/build.py                 ← (ixtiyoriy) savollar o‘zgarsa, hujjat/PDF/Excel’ni qayta yasaydi
 ```
 
-Saytdagi qism alohida joyda: **`public/7a/`** (pastda).
+Saytdagi qism alohida joyda: **`public/7a/`** — mustaqil papka (pastda).
 
 ---
 
 ## Saytga qo‘yish (onlayn test va so‘rovnoma)
 
-Saytingizga (JazbaAI) **`/7a/`** bo‘limi qo‘shildi. O‘quvchilar kompyuter yoki telefondan kiradi, javoblar serverga saqlanadi, natijalar o‘zi hisoblanadi.
+Onlayn qism — bitta mustaqil **`7a`** papkasi (`public/7a/`). U boshqa fayllarga bog‘liq emas:
+PHP ishlaydigan istalgan joyga (XAMPP, maktab sayti, JazbaAI) papkani **to‘liq** ko‘chirsangiz ishlaydi.
+O‘quvchilar kompyuter yoki telefondan kiradi, javoblar serverga saqlanadi, natijalar o‘zi hisoblanadi.
 
-| Kim | Manzil | Nima qiladi |
-|-----|--------|-------------|
-| O‘quvchi | `https://cloud.com.uz/7a/` | Sinf kodini kiritadi → ro‘yxatdan ismini tanlaydi → so‘rovnoma / test |
-| Ustoz | `https://cloud.com.uz/7a/admin.php` | JazbaAI’ga **Begdulla** login bilan kirgan bo‘lsangiz ochiladi: sozlamalar, natijalar, o‘quvchi kartasi, CSV yuklab olish |
+| Kim | Manzil (misol) | Nima qiladi |
+|-----|----------------|-------------|
+| O‘quvchi | `…/7a/` | Sinf kodini kiritadi → ro‘yxatdan ismini tanlaydi → so‘rovnoma / test |
+| Ustoz | `…/7a/admin.php` | Parol bilan kiradi: sozlamalar, natijalar, o‘quvchi kartasi, CSV yuklab olish |
+
+**Manzil papka qayerda turganiga bog‘liq.** Masalan, XAMPP’da:
+`C:\xampp\htdocs\7a\` → `http://localhost/7a/`;
+sayt papkasi `E:\Xojeli 5-mektep\` bo‘lsa va `7a` uning `public` ichida bo‘lsa → `http://localhost/public/7a/`
+(Apache’da qaysi papka sayt ildizi qilib sozlanganiga qarab). Sinfdagi boshqa kompyuterlardan kirish uchun
+`localhost` o‘rniga ustoz kompyuterining IP manzilini yozing (masalan `http://192.168.1.10/7a/`).
 
 **Birinchi sozlash (5 daqiqa):**
-1. Serverda `git pull` qiling (yoki `public/7a/` va `7A-diagnostika/savollar/` papkalarini serverga ko‘chiring).
-2. JazbaAI’ga ustoz sifatida kiring → `…/7a/admin.php` ni oching.
-3. **Sozlamalar** bo‘limida: sinf kodini yozing (masalan `7A2026`), o‘quvchilar ro‘yxatini (har qatorda bitta F.I.) joylang, «Tanishuv so‘rovnomasi» va «Kirish testi (A)» ni yoqing → **Saqlash**.
+1. `7a` papkasini **ichidagi hamma narsa bilan** (`_savollar` papkasi ham!) saytingizga ko‘chiring.
+2. `…/7a/admin.php` ni oching → birinchi marta **ustoz parolini o‘rnating** (kamida 6 belgi). Buni o‘quvchilar kirishidan oldin qiling.
+3. **Sozlamalar** bo‘limida: sinf kodini yozing (masalan `7A2026`), o‘quvchilar ro‘yxatini (har qatorda bitta F.I.) joylang,
+   «Tanishuv so‘rovnomasi» va «Kirish testi (A)» ni yoqing → **Saqlash**.
 4. O‘zingiz bir marta o‘quvchi sifatida kirib sinab ko‘ring, keyin admin’da o‘sha yozuvni o‘chiring.
 5. Yanvarda «Kirish testi»ni o‘chirib, «Yakuniy test (B)» va «Fikr so‘rovnomasi»ni yoqasiz.
 
-> Admin’ga boshqa login bilan kirish kerak bo‘lsa, `.env` fayliga `SINF7A_USTOZ=login1,login2` qatorini qo‘shing.
-> O‘quvchi javoblari `data/7a/` papkasida saqlanadi va **GitHub’ga yuklanmaydi** (`.gitignore`).
+> O‘quvchi javoblari `7a/_data/` papkasida saqlanadi (birinchi javobda o‘zi yaratiladi) va **GitHub’ga yuklanmaydi** (`.gitignore`).
+> Zaxira nusxa uchun shu papkani ko‘chirib qo‘ying. Parolni unutsangiz — `7a/_data/ustoz.json.php` faylini o‘chiring.
+> JazbaAI ichida ishlatsangiz, JazbaAI’dagi **Begdulla** logini bilan ham kirish mumkin (boshqa loginlar: `.env` → `SINF7A_USTOZ=login1,login2`).
 
 **Internet yoki sayt ishlamasa:** `chop_etish/` dagi PDF’larni chop eting, javoblarni `jadvallar/7A_monitoring.xlsx` ga kiriting — natija xuddi shunday hisoblanadi.
 

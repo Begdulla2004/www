@@ -1,20 +1,69 @@
 <?php
 // 7A — ustoz paneli: sozlamalar, natijalar, o‘quvchi kartasi, so‘rovnoma tahlili, CSV.
-// Kirish: JazbaAI’ga ustoz sifatida kirgan bo‘lish kerak; login .env dagi SINF7A_USTOZ ro‘yxatida bo‘lishi shart.
+// Kirish: modulning o‘z paroli (birinchi ochilganda o‘rnatiladi) yoki JazbaAI ichida — SINF7A_USTOZ ro‘yxatidagi login.
 require_once __DIR__ . '/_7a.php';
+
+$kirish_xato = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && in_array($_POST['amal'] ?? '', ['parol_ornat', 'kirish', 'chiqish'], true)) {
+  s7a_csrf_tekshir();
+  $amal = $_POST['amal'];
+  if ($amal === 'chiqish') {
+    unset($_SESSION['s7a_ustoz']);
+    s7a_yonaltir('admin.php');
+  }
+  $parol = (string)($_POST['parol'] ?? '');
+  if ($amal === 'parol_ornat' && !s7a_parol_bormi()) {
+    if (strlen($parol) < 6) $kirish_xato = 'Parol kamida 6 belgidan iborat bo‘lsin.';
+    elseif ($parol !== (string)($_POST['parol2'] ?? '')) $kirish_xato = 'Parollar bir xil emas.';
+    else {
+      s7a_parol_saqla($parol);
+      session_regenerate_id(true);
+      $_SESSION['s7a_ustoz'] = true;
+      s7a_yonaltir('admin.php?b=sozlamalar');
+    }
+  }
+  if ($amal === 'kirish') {
+    if (s7a_parol_tekshir($parol)) {
+      session_regenerate_id(true);
+      $_SESSION['s7a_ustoz'] = true;
+      s7a_yonaltir('admin.php');
+    }
+    sleep(1); // parol terib ko‘rishni sekinlashtiradi
+    $kirish_xato = 'Parol noto‘g‘ri.';
+  }
+}
 
 $u = s7a_ustoz();
 if (!$u) {
+  $yangi = !s7a_parol_bormi();
   s7a_bosh('Ustoz paneli');
-  echo '<section class="card narrow"><h2>Ustoz paneli</h2>';
-  if (!empty($_SESSION['user'])) {
-    echo '<p>Bu login (<b>' . s7a_h($_SESSION['user']['username'] ?? '') . '</b>) uchun ruxsat yo‘q.</p>'
-      . '<p class="muted small">Ruxsat berish: <code>.env</code> fayliga <code>SINF7A_USTOZ=login1,login2</code> qatorini qo‘shing.</p>';
-  } else {
-    echo '<p>Avval JazbaAI’ga ustoz sifatida kiring, keyin shu sahifaga qayting.</p>'
-      . '<a class="btn" href="../login.php">Kirish</a>';
-  }
-  echo '</section>';
+  ?>
+  <section class="card narrow">
+    <h2>Ustoz paneli · 7A</h2>
+    <?php if ($kirish_xato): ?><div class="alert"><?= s7a_h($kirish_xato) ?></div><?php endif; ?>
+    <form method="post">
+      <?= s7a_csrf_input() ?>
+      <?php if ($yangi): ?>
+        <p>Birinchi marta ochilyapti — <b>ustoz parolini o‘rnating</b>. Keyin panelga faqat shu parol bilan kiriladi.</p>
+        <input type="hidden" name="amal" value="parol_ornat">
+        <label for="parol">Yangi parol (kamida 6 belgi)</label>
+        <input id="parol" type="password" name="parol" required minlength="6" autofocus autocomplete="new-password">
+        <label for="parol2">Parolni takrorlang</label>
+        <input id="parol2" type="password" name="parol2" required minlength="6" autocomplete="new-password">
+        <button class="btn">Saqlash va kirish</button>
+      <?php else: ?>
+        <input type="hidden" name="amal" value="kirish">
+        <label for="parol">Ustoz paroli</label>
+        <input id="parol" type="password" name="parol" required autofocus autocomplete="current-password">
+        <button class="btn">Kirish</button>
+        <p class="muted small" style="margin-top:14px">Parolni unutsangiz: serverdagi <code>7a/_data/ustoz.json.php</code> faylini o‘chiring — keyingi ochilishda yangi parol so‘raladi.</p>
+      <?php endif; ?>
+    </form>
+    <?php if (s7a_jazbaai_bormi()): ?>
+      <p class="muted small" style="margin-top:14px">Yoki <a href="../login.php">JazbaAI orqali kiring</a> (login <code>.env</code> → <code>SINF7A_USTOZ</code> ro‘yxatida bo‘lishi kerak).</p>
+    <?php endif; ?>
+  </section>
+  <?php
   s7a_oxir();
   exit;
 }
@@ -34,6 +83,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     $faol = [];
     foreach (S7A_FAOLIYATLAR as $k => $_) $faol[$k] = !empty($_POST['faol'][$k]);
+    $yangi_parol = (string)($_POST['yangi_parol'] ?? '');
+    if ($yangi_parol !== '') {
+      if (strlen($yangi_parol) < 6) s7a_yonaltir('admin.php?b=sozlamalar&parol_xato=1');
+      s7a_parol_saqla($yangi_parol);
+    }
     s7a_sozlamalar_saqla([
       'sinf_kodi' => substr($kod, 0, 20),
       'royxat' => array_slice($royxat, 0, 60),
@@ -272,7 +326,13 @@ s7a_bosh('Ustoz paneli', 'admin');
       · faol: <?= s7a_h(implode(', ', array_map(function ($k) { return S7A_FAOLIYATLAR[$k]['nomi']; }, array_keys(array_filter($soz['faol'])))) ?: '—') ?></p>
   </div>
   <a class="btn ghost small" href="index.php" target="_blank">O‘quvchi sahifasi ↗</a>
+  <?php if (!empty($_SESSION['s7a_ustoz'])): ?>
+    <form method="post" class="inline"><?= s7a_csrf_input() ?><input type="hidden" name="amal" value="chiqish"><button class="btn ghost small">Chiqish</button></form>
+  <?php endif; ?>
 </header>
+<?php if (in_array(null, $bank, true)): ?>
+  <div class="alert">Savollar topilmadi: <code>7a/_savollar/</code> papkasi to‘liq ko‘chirilmagan. «7a» papkasini arxivdan qaytadan to‘liq nusxalang.</div>
+<?php endif; ?>
 <nav class="tabs">
   <?php foreach ($tablar as $k => $t): ?>
     <a href="admin.php?b=<?= $k ?>" class="<?= $bolim === $k || ($bolim === 'oquvchi' && $k === 'oquvchilar') ? 'on' : '' ?>"><?= s7a_h($t) ?></a>
@@ -541,6 +601,7 @@ elseif ($bolim === 'fikr'):
 // ================================================================ SOZLAMALAR
 else: ?>
   <?php if (!empty($_GET['ok'])): ?><div class="alert ok">Saqlandi.</div><?php endif; ?>
+  <?php if (!empty($_GET['parol_xato'])): ?><div class="alert">Parol kamida 6 belgidan iborat bo‘lsin — hech narsa saqlanmadi.</div><?php endif; ?>
   <section class="card">
     <h3>Sozlamalar</h3>
     <form method="post" class="settings">
@@ -563,6 +624,8 @@ else: ?>
         Savollar va javob variantlarini har o‘quvchiga aralashtirib berish <span class="muted small">(yonidagidan ko‘chirishni qiyinlashtiradi)</span></label>
       <label class="opt"><input type="checkbox" name="natija_korsatish" value="1" <?= $soz['natija_korsatish'] ? 'checked' : '' ?>>
         Test tugagach o‘quvchiga ballini ko‘rsatish <span class="muted small">(tavsiya: o‘chiq — boshqa guruh hali topshirmagan bo‘lishi mumkin)</span></label>
+      <label>Ustoz parolini almashtirish <span class="muted small">(ixtiyoriy; bo‘sh qoldirsangiz o‘zgarmaydi)</span></label>
+      <input type="password" name="yangi_parol" minlength="6" autocomplete="new-password" placeholder="Yangi parol (kamida 6 belgi)">
       <button class="btn">Saqlash</button>
     </form>
   </section>
@@ -572,7 +635,8 @@ else: ?>
       <li>O‘quvchilar manzili: <code><?= s7a_h((isset($_SERVER['HTTP_HOST']) ? '//' . $_SERVER['HTTP_HOST'] : '') . rtrim(dirname($_SERVER['SCRIPT_NAME'] ?? '/7a/admin.php'), '/') . '/') ?></code> — doskaga yozing.</li>
       <li>Bir o‘quvchi qayta topshirishi kerak bo‘lsa: O‘quvchilar → ism → yozuvni «O‘chirish».</li>
       <li>O‘zingiz sinab ko‘rgan yozuvni ham shu yo‘l bilan o‘chiring.</li>
-      <li>Javoblar serverda <code>data/7a/</code> papkasida saqlanadi — zaxira nusxa uchun shu papkani ko‘chirib qo‘ying.</li>
+      <li>Javoblar serverda <code>7a/_data/</code> papkasida saqlanadi — zaxira nusxa uchun shu papkani ko‘chirib qo‘ying.</li>
+      <li>Parolni unutsangiz: <code>7a/_data/ustoz.json.php</code> faylini o‘chiring — keyingi ochilishda yangi parol so‘raladi.</li>
     </ul>
   </section>
 <?php endif; ?>

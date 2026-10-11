@@ -1,20 +1,24 @@
 <?php
 // 7A diagnostika moduli — umumiy yordamchilar.
-// Savollar: 7A-diagnostika/savollar/*.json (bitta manba: sayt ham, chop etiladigan PDF ham shulardan).
-// Javoblar: data/7a/ — .json.php fayllar (brauzerdan ochib bo‘lmaydi), .gitignore’da.
-require_once __DIR__ . '/../../lib/utils.php';
-start_session_safe();
+// Modul mustaqil: «7a» papkasini PHP ishlaydigan istalgan saytga (XAMPP, JazbaAI…) ko‘chirish kifoya.
+// Savollar: _savollar/*.json.php (7A-diagnostika/tools/build.py savollar/*.json dan yasaydi).
+// Javoblar: _data/ — .json.php fayllar (brauzerdan ochib bo‘lmaydi), .gitignore’da.
 
-define('S7A_DATA', __DIR__ . '/../../data/7a');
-define('S7A_SAVOLLAR', __DIR__ . '/../../7A-diagnostika/savollar');
+// JazbaAI ichida bo‘lsa — uning sozlamalari (.env) va ustoz logini ham ishlaydi; bo‘lmasa shart emas
+if (is_file(__DIR__ . '/../../lib/utils.php')) require_once __DIR__ . '/../../lib/utils.php';
+if (session_status() === PHP_SESSION_NONE) session_start();
+date_default_timezone_set('Asia/Tashkent');
+
+define('S7A_DATA', __DIR__ . '/_data');
+define('S7A_SAVOLLAR', __DIR__ . '/_savollar');
 define('S7A_HIMOYA', "<?php http_response_code(404); exit; ?>\n");
 define('S7A_SESSIYA_MUDDATI', 45 * 60);
 
 const S7A_FAOLIYATLAR = [
-  'sorovnoma' => ['fayl' => 'sorovnoma.json', 'tur' => 'sorovnoma', 'nomi' => 'Tanishuv so‘rovnomasi'],
-  'test_A' => ['fayl' => 'test_A.json', 'tur' => 'test', 'nomi' => 'Kirish testi (A variant)'],
-  'test_B' => ['fayl' => 'test_B.json', 'tur' => 'test', 'nomi' => 'Yakuniy test (B variant)'],
-  'fikr' => ['fayl' => 'fikr_sorovnoma.json', 'tur' => 'sorovnoma', 'nomi' => 'Darslar haqida fikr (anonim)'],
+  'sorovnoma' => ['fayl' => 'sorovnoma.json.php', 'tur' => 'sorovnoma', 'nomi' => 'Tanishuv so‘rovnomasi'],
+  'test_A' => ['fayl' => 'test_A.json.php', 'tur' => 'test', 'nomi' => 'Kirish testi (A variant)'],
+  'test_B' => ['fayl' => 'test_B.json.php', 'tur' => 'test', 'nomi' => 'Yakuniy test (B variant)'],
+  'fikr' => ['fayl' => 'fikr_sorovnoma.json.php', 'tur' => 'sorovnoma', 'nomi' => 'Darslar haqida fikr (anonim)'],
 ];
 // 10_tahlil_va_darajalar.md bilan bir xil chegaralar
 const S7A_DARAJALAR = [['Yuqori', 85], ['Yaxshi', 65], ['O‘rta', 45], ['Boshlang‘ich', 0]];
@@ -37,8 +41,7 @@ function s7a_bank($faoliyat) {
   static $kesh = [];
   if (!isset(S7A_FAOLIYATLAR[$faoliyat])) return null;
   if (!isset($kesh[$faoliyat])) {
-    $raw = @file_get_contents(S7A_SAVOLLAR . '/' . S7A_FAOLIYATLAR[$faoliyat]['fayl']);
-    $kesh[$faoliyat] = $raw ? json_decode($raw, true) : null;
+    $kesh[$faoliyat] = s7a_fayl_oqi(S7A_SAVOLLAR . '/' . S7A_FAOLIYATLAR[$faoliyat]['fayl'], null);
   }
   return $kesh[$faoliyat];
 }
@@ -54,6 +57,7 @@ function s7a_fayl_oqi($path, $default = []) {
 }
 
 function s7a_fayl_yoz($path, $data) {
+  s7a_data_tayyorla();
   $dir = dirname($path);
   if (!is_dir($dir)) mkdir($dir, 0775, true);
   $tmp = $path . '.' . bin2hex(random_bytes(4)) . '.tmp';
@@ -105,7 +109,7 @@ function s7a_fikr_topshirganlar() { return s7a_fayl_oqi(S7A_DATA . '/fikr_topshi
 
 function s7a_fikr_belgila($ism) {
   $path = S7A_DATA . '/fikr_topshirganlar.json.php';
-  if (!is_dir(S7A_DATA)) mkdir(S7A_DATA, 0775, true);
+  s7a_data_tayyorla();
   $lock = fopen(S7A_DATA . '/.fikr.lock', 'c');
   flock($lock, LOCK_EX);
   $l = s7a_fayl_oqi($path, []);
@@ -147,13 +151,39 @@ function s7a_oquvchi() {
 
 function s7a_oquvchi_chiqish() { unset($_SESSION['s7a'], $_SESSION['s7a_tartib']); }
 
+// _data papkasi: birinchi yozuvda yaratiladi; Apache uchun .htaccess (asosiy himoya baribir .json.php)
+function s7a_data_tayyorla() {
+  if (is_dir(S7A_DATA)) return;
+  if (!@mkdir(S7A_DATA, 0775, true) && !is_dir(S7A_DATA)) {
+    http_response_code(500);
+    exit('7a/_data papkasini yaratib bo‘lmadi. «7a» papkasiga yozish ruxsatini bering.');
+  }
+  @file_put_contents(S7A_DATA . '/.htaccess', "Require all denied\n");
+  @file_put_contents(S7A_DATA . '/index.html', '');
+}
+
+// Ustoz: modulning o‘z paroli bilan yoki (JazbaAI ichida) ruxsat berilgan JazbaAI logini bilan
 function s7a_ustoz() {
+  if (!empty($_SESSION['s7a_ustoz'])) return ['username' => 'ustoz', 'full_name' => 'Ustoz'];
   $u = $_SESSION['user'] ?? null;
-  if (!$u || empty($u['username'])) return null;
+  if (!$u || empty($u['username']) || !function_exists('get_env')) return null;
   $ruxsat = array_filter(array_map('trim', explode(',', get_env('SINF7A_USTOZ', 'Begdulla'))), 'strlen');
   foreach ($ruxsat as $r) if (strcasecmp($r, $u['username']) === 0) return $u;
   return null;
 }
+
+function s7a_parol_bormi() { return (bool)s7a_fayl_oqi(S7A_DATA . '/ustoz.json.php', []); }
+
+function s7a_parol_tekshir($parol) {
+  $d = s7a_fayl_oqi(S7A_DATA . '/ustoz.json.php', []);
+  return !empty($d['hash']) && password_verify((string)$parol, $d['hash']);
+}
+
+function s7a_parol_saqla($parol) {
+  s7a_fayl_yoz(S7A_DATA . '/ustoz.json.php', ['hash' => password_hash((string)$parol, PASSWORD_DEFAULT), 'vaqt' => date('c')]);
+}
+
+function s7a_jazbaai_bormi() { return is_file(__DIR__ . '/../login.php') && function_exists('get_env'); }
 
 function s7a_yonaltir($url) { header('Location: ' . $url); exit; }
 

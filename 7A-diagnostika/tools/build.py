@@ -3,6 +3,7 @@
 
 Yasaladi:
   03_oquvchi_sorovnomasi.md, 04_kirish_testi_A.md, 05_yakuniy_test_B.md, 06_javoblar_kaliti.md
+  public/7a/_savollar/*.json.php (sayt moduli shu fayllardan o‘qiydi)
   jadvallar/7A_monitoring.xlsx
   chop_etish/*.pdf va chop_etish/7A_toliq_qollanma.docx
 
@@ -877,6 +878,16 @@ def main():
     for name, text in md.items():
         (ROOT / name).write_text(text.rstrip() + "\n", "utf-8")
         print("  md:", name)
+
+    # Sayt moduli uchun savollar nusxasi (public/7a/_savollar) — .json.php: brauzerdan kalitni o‘qib bo‘lmaydi
+    modul = ROOT.parent / "public" / "7a" / "_savollar"
+    if modul.parent.is_dir():
+        modul.mkdir(exist_ok=True)
+        for src in sorted(SAV.glob("*.json")):
+            data = json.loads(src.read_text("utf-8"))
+            (modul / (src.name + ".php")).write_text(
+                "<?php http_response_code(404); exit; ?>\n" + json.dumps(data, ensure_ascii=False, indent=1), "utf-8")
+            print("  sayt:", f"public/7a/_savollar/{src.name}.php")
 
     if args.pdfsiz:
         return

@@ -45,8 +45,9 @@ data/          # JSON storage (dev/proto uchun)
 
 ## 7A diagnostika moduli
 - O‘quvchilar: `/7a/` — sinf kodi → ism → tanishuv so‘rovnomasi / kirish testi (A) / yakuniy test (B) / anonim fikr
-- Ustoz: `/7a/admin.php` — natijalar, darajalar, o‘sish (g), o‘quvchi kartasi, CSV (ruxsat: `.env` → `SINF7A_USTOZ`, standart `Begdulla`)
-- Savollar va barcha qo‘llanmalar: `7A-diagnostika/` (boshlash: `7A-diagnostika/README.md`); javoblar `data/7a/` da saqlanadi (gitignore)
+- Ustoz: `/7a/admin.php` — natijalar, darajalar, o‘sish (g), o‘quvchi kartasi, CSV (kirish: modulning o‘z paroli yoki JazbaAI logini — `.env` → `SINF7A_USTOZ`, standart `Begdulla`)
+- `public/7a/` mustaqil papka: boshqa PHP saytga (XAMPP) ham ko‘chirsa bo‘ladi; javoblar `public/7a/_data/` da (gitignore)
+- Savollar va barcha qo‘llanmalar: `7A-diagnostika/` (boshlash: `7A-diagnostika/README.md`)
 
 ## AI Baholash
 - `.env` ichida `GEMINI_API_KEY` shart.

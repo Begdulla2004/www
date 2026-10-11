@@ -46,6 +46,7 @@ s7a_bosh('Informatika');
 </header>
 
 <?php if ($xato): ?><div class="alert"><?= s7a_h($xato) ?></div><?php endif; ?>
+<?php foreach (S7A_FAOLIYATLAR as $k => $_) if (!s7a_bank($k)) { echo '<div class="alert">Savollar topilmadi (<code>7a/_savollar/</code>). Ustozga ayting.</div>'; break; } ?>
 
 <?php if ($soz['sinf_kodi'] === ''): ?>
   <section class="card"><h2>Hali tayyor emas</h2><p>Ustoz bu bo‘limni hali yoqmagan. Biroz kuting.</p></section>

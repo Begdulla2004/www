@@ -1,0 +1,470 @@
+<?php http_response_code(404); exit; ?>
+{
+ "id": "test_A",
+ "nomi": "Kirish (diagnostik) testi — A variant",
+ "qachon": "Oktabr, 1-hafta (boshlang‘ich holat)",
+ "sinf": "7A",
+ "fan": "Informatika va axborot texnologiyalari",
+ "vaqt_daqiqa": 35,
+ "korsatma": "Har bir savolga faqat BITTA to‘g‘ri javobni tanlang. Bilmasangiz — taxmin qilmang, keyingisiga o‘ting. Bu test baho uchun emas: ustoz sizga qanday yordam berishini bilish uchun.",
+ "bolimlar": [
+  {
+   "id": "S1",
+   "nomi": "Kompyuter qurilmalari va fayllar",
+   "qism": "tayanch",
+   "manba": "5-sinf"
+  },
+  {
+   "id": "S2",
+   "nomi": "Matn muharriri (Word)",
+   "qism": "tayanch",
+   "manba": "6-sinf"
+  },
+  {
+   "id": "S3",
+   "nomi": "Algoritm va mantiq (Scratch)",
+   "qism": "tayanch",
+   "manba": "5–6-sinf"
+  },
+  {
+   "id": "S4",
+   "nomi": "Axborot va o‘lchov birliklari",
+   "qism": "7-sinf",
+   "manba": "7-sinf, I bob"
+  },
+  {
+   "id": "S5",
+   "nomi": "Sanoq sistemalari va kodlash",
+   "qism": "7-sinf",
+   "manba": "7-sinf, I bob"
+  },
+  {
+   "id": "S6",
+   "nomi": "Internet va axborot xavfsizligi",
+   "qism": "7-sinf",
+   "manba": "7-sinf, II bob"
+  }
+ ],
+ "savollar": [
+  {
+   "id": "A01",
+   "bolim": "S1",
+   "qiyinlik": 1,
+   "kunikma": "Kiritish qurilmasini aniqlash",
+   "matn": "Quyidagilardan qaysi biri axborot KIRITISH qurilmasi?",
+   "variantlar": [
+    "Monitor",
+    "Klaviatura",
+    "Printer",
+    "Karnay (dinamik)"
+   ],
+   "javob": 1
+  },
+  {
+   "id": "A02",
+   "bolim": "S1",
+   "qiyinlik": 1,
+   "kunikma": "Protsessor vazifasi",
+   "matn": "Kompyuterda barcha hisoblashlarni bajaradigan, uning «miyasi» deb ataladigan qurilma qaysi?",
+   "variantlar": [
+    "Monitor",
+    "Sichqoncha",
+    "Veb-kamera",
+    "Protsessor"
+   ],
+   "javob": 3
+  },
+  {
+   "id": "A03",
+   "bolim": "S1",
+   "qiyinlik": 2,
+   "kunikma": "Operativ va doimiy xotira farqi",
+   "matn": "Kompyuter o‘chirilganda qaysi xotiradagi ma’lumotlar O‘CHIB KETADI?",
+   "variantlar": [
+    "Qattiq disk (HDD/SSD)",
+    "Fleshka",
+    "Operativ xotira (RAM)",
+    "CD/DVD disk"
+   ],
+   "javob": 2
+  },
+  {
+   "id": "A04",
+   "bolim": "S1",
+   "qiyinlik": 1,
+   "kunikma": "Fayl turini kengaytmasidan aniqlash",
+   "matn": "Quyidagi fayllardan qaysi biri MATN HUJJATI (Word fayli)?",
+   "variantlar": [
+    "rasm.png",
+    "insho.docx",
+    "kuy.mp3",
+    "video.mp4"
+   ],
+   "javob": 1
+  },
+  {
+   "id": "A05",
+   "bolim": "S1",
+   "qiyinlik": 2,
+   "kunikma": "Operatsion tizim tushunchasi",
+   "matn": "Operatsion tizim (masalan, Windows) — bu ...",
+   "variantlar": [
+    "kompyuter qurilmalari va dasturlarini boshqaradigan asosiy dastur",
+    "faqat matn yozish uchun dastur",
+    "Internetdagi sayt",
+    "kompyuter o‘yini"
+   ],
+   "javob": 0
+  },
+  {
+   "id": "A06",
+   "bolim": "S2",
+   "qiyinlik": 1,
+   "kunikma": "Nusxalash (Ctrl+C)",
+   "matn": "Belgilangan matnni NUSXALASH (kopiya qilish) uchun qaysi tugmalar birikmasi ishlatiladi?",
+   "variantlar": [
+    "Ctrl + V",
+    "Ctrl + X",
+    "Ctrl + Z",
+    "Ctrl + C"
+   ],
+   "javob": 3
+  },
+  {
+   "id": "A07",
+   "bolim": "S2",
+   "qiyinlik": 2,
+   "kunikma": "Qalin shrift (Ctrl+B)",
+   "matn": "Belgilangan so‘zni QALIN (yo‘g‘on) shriftga o‘tkazish uchun qaysi birikma ishlatiladi?",
+   "variantlar": [
+    "Ctrl + I",
+    "Ctrl + U",
+    "Ctrl + B",
+    "Ctrl + P"
+   ],
+   "javob": 2
+  },
+  {
+   "id": "A08",
+   "bolim": "S2",
+   "qiyinlik": 2,
+   "kunikma": "Abzatsni tekislash",
+   "matn": "Sarlavhani sahifa O‘RTASIGA to‘g‘ri joylashtirish uchun nima qilish kerak?",
+   "variantlar": [
+    "Probel (bo‘sh joy) tugmasini ko‘p marta bosish",
+    "Shrift o‘lchamini kattalashtirish",
+    "«Markaz bo‘yicha tekislash» tugmasini bosish (Ctrl + E)",
+    "Enter tugmasini bosish"
+   ],
+   "javob": 2
+  },
+  {
+   "id": "A09",
+   "bolim": "S2",
+   "qiyinlik": 1,
+   "kunikma": "Amalni bekor qilish (Ctrl+Z)",
+   "matn": "Oxirgi bajarilgan amalni BEKOR QILISH uchun qaysi birikma ishlatiladi?",
+   "variantlar": [
+    "Ctrl + Z",
+    "Ctrl + S",
+    "Ctrl + A",
+    "Ctrl + N"
+   ],
+   "javob": 0
+  },
+  {
+   "id": "A10",
+   "bolim": "S2",
+   "qiyinlik": 2,
+   "kunikma": "Backspace va Delete farqi",
+   "matn": "Kursor turgan joydan CHAPDAGI belgini qaysi tugma o‘chiradi?",
+   "variantlar": [
+    "Delete",
+    "Backspace",
+    "Shift",
+    "Tab"
+   ],
+   "javob": 1
+  },
+  {
+   "id": "A11",
+   "bolim": "S3",
+   "qiyinlik": 1,
+   "kunikma": "Algoritm tushunchasi",
+   "matn": "Algoritm — bu ...",
+   "variantlar": [
+    "kompyuterning bir qismi",
+    "tasodifiy harakatlar to‘plami",
+    "kompyuter o‘yini",
+    "maqsadga erishish uchun aniq ketma-ketlikda bajariladigan buyruqlar"
+   ],
+   "javob": 3
+  },
+  {
+   "id": "A12",
+   "bolim": "S3",
+   "qiyinlik": 1,
+   "kunikma": "Qadamlarni to‘g‘ri tartibga solish",
+   "matn": "«Tish yuvish» algoritmi qadamlari aralashib ketgan: 1) Pastani cho‘tkaga surtish; 2) Tishlarni cho‘tkalash; 3) Og‘izni chayish; 4) Cho‘tkani qo‘lga olish. To‘g‘ri tartibni tanlang.",
+   "variantlar": [
+    "4 → 1 → 2 → 3",
+    "1 → 2 → 3 → 4",
+    "4 → 2 → 1 → 3",
+    "2 → 4 → 1 → 3"
+   ],
+   "javob": 0
+  },
+  {
+   "id": "A13",
+   "bolim": "S3",
+   "qiyinlik": 2,
+   "kunikma": "Takrorlash (sikl)",
+   "matn": "Scratch’da «10 marta takrorla [ 10 qadam yur ]» bloki bajarildi. Qahramon (sprayt) jami necha qadam yurdi?",
+   "variantlar": [
+    "10",
+    "20",
+    "100",
+    "1010"
+   ],
+   "javob": 2
+  },
+  {
+   "id": "A14",
+   "bolim": "S3",
+   "qiyinlik": 1,
+   "kunikma": "Shart (agar ... aks holda)",
+   "matn": "Algoritm: «AGAR havo harorati 0° dan past bo‘lsa — «Issiq kiyin», AKS HOLDA — «Yengil kiyin»». Harorat −5° bo‘lsa, natija nima bo‘ladi?",
+   "variantlar": [
+    "Issiq kiyin",
+    "Yengil kiyin",
+    "Ikkalasi ham",
+    "Hech narsa chiqmaydi"
+   ],
+   "javob": 0
+  },
+  {
+   "id": "A15",
+   "bolim": "S3",
+   "qiyinlik": 3,
+   "kunikma": "O‘zgaruvchi qiymatini kuzatish",
+   "matn": "Algoritm bajarildi: x = 3; keyin x = x + 4; keyin x = x · 2. Oxirida x nechaga teng? (x = x + 4 — «x ning yangi qiymati = eski qiymati + 4» degani)",
+   "variantlar": [
+    "7",
+    "10",
+    "14",
+    "24"
+   ],
+   "javob": 2
+  },
+  {
+   "id": "A16",
+   "bolim": "S4",
+   "qiyinlik": 1,
+   "kunikma": "Eng kichik o‘lchov birligi",
+   "matn": "Axborotning eng KICHIK o‘lchov birligi qaysi?",
+   "variantlar": [
+    "Bit",
+    "Bayt",
+    "Kilobayt",
+    "Megabayt"
+   ],
+   "javob": 0
+  },
+  {
+   "id": "A17",
+   "bolim": "S4",
+   "qiyinlik": 1,
+   "kunikma": "Bayt va bit munosabati",
+   "matn": "1 bayt necha bitga teng?",
+   "variantlar": [
+    "2",
+    "8",
+    "10",
+    "1024"
+   ],
+   "javob": 1
+  },
+  {
+   "id": "A18",
+   "bolim": "S4",
+   "qiyinlik": 2,
+   "kunikma": "Kilobayt va bayt munosabati",
+   "matn": "1 Kbayt (kilobayt) necha baytga teng?",
+   "variantlar": [
+    "8",
+    "100",
+    "1024",
+    "10 000"
+   ],
+   "javob": 2
+  },
+  {
+   "id": "A19",
+   "bolim": "S4",
+   "qiyinlik": 2,
+   "kunikma": "Bitdan baytga o‘tkazish",
+   "matn": "16 bit necha baytga teng?",
+   "variantlar": [
+    "2",
+    "8",
+    "16",
+    "128"
+   ],
+   "javob": 0
+  },
+  {
+   "id": "A20",
+   "bolim": "S4",
+   "qiyinlik": 3,
+   "kunikma": "Hajmlarni taqqoslash",
+   "matn": "Quyidagilardan qaysi biri eng KATTA hajm?",
+   "variantlar": [
+    "1 Kbayt",
+    "2000 bayt",
+    "10 000 bit",
+    "1500 bayt"
+   ],
+   "javob": 1
+  },
+  {
+   "id": "A21",
+   "bolim": "S5",
+   "qiyinlik": 1,
+   "kunikma": "Ikkilik sistema raqamlari",
+   "matn": "Ikkilik sanoq sistemasida qaysi raqamlar ishlatiladi?",
+   "variantlar": [
+    "1 va 2",
+    "0 dan 9 gacha",
+    "0 va 1",
+    "0, 1 va 2"
+   ],
+   "javob": 2
+  },
+  {
+   "id": "A22",
+   "bolim": "S5",
+   "qiyinlik": 2,
+   "kunikma": "Ikkilikdan o‘nlikka o‘tkazish",
+   "matn": "Ikkilik sanoq sistemasidagi 101₂ soni o‘nlik sistemada nechaga teng?",
+   "variantlar": [
+    "3",
+    "5",
+    "6",
+    "101"
+   ],
+   "javob": 1
+  },
+  {
+   "id": "A23",
+   "bolim": "S5",
+   "qiyinlik": 2,
+   "kunikma": "O‘nlikdan ikkilikka o‘tkazish",
+   "matn": "O‘nlik sanoq sistemasidagi 6 soni ikkilik sistemada qanday yoziladi?",
+   "variantlar": [
+    "100",
+    "101",
+    "111",
+    "110"
+   ],
+   "javob": 3
+  },
+  {
+   "id": "A24",
+   "bolim": "S5",
+   "qiyinlik": 3,
+   "kunikma": "Ikkilik qo‘shish",
+   "matn": "Ikkilik sistemada qo‘shing: 11₂ + 1₂ = ?",
+   "variantlar": [
+    "12₂",
+    "100₂",
+    "111₂",
+    "4₂"
+   ],
+   "javob": 1
+  },
+  {
+   "id": "A25",
+   "bolim": "S5",
+   "qiyinlik": 2,
+   "kunikma": "Jadval bo‘yicha kodlash",
+   "matn": "Kod jadvali: A – 1, B – 2, I – 3, K – 4, L – 5, M – 6, O – 7, T – 8. «OLMA» so‘zi qanday kodlanadi?",
+   "variantlar": [
+    "7651",
+    "5761",
+    "7561",
+    "1657"
+   ],
+   "javob": 2
+  },
+  {
+   "id": "A26",
+   "bolim": "S6",
+   "qiyinlik": 1,
+   "kunikma": "Brauzer vazifasi",
+   "matn": "Internet sahifalarini (saytlarni) ko‘rish uchun qaysi dastur ishlatiladi?",
+   "variantlar": [
+    "Brauzer (masalan, Google Chrome)",
+    "Paint",
+    "Kalkulyator",
+    "Bloknot"
+   ],
+   "javob": 0
+  },
+  {
+   "id": "A27",
+   "bolim": "S6",
+   "qiyinlik": 2,
+   "kunikma": "Elektron pochta manzili formati",
+   "matn": "Quyidagilardan qaysi biri TO‘G‘RI yozilgan elektron pochta manzili?",
+   "variantlar": [
+    "www.mail.uz",
+    "ali valiyev@mail",
+    "@ali.uz.mail",
+    "ali.valiyev@mail.uz"
+   ],
+   "javob": 3
+  },
+  {
+   "id": "A28",
+   "bolim": "S6",
+   "qiyinlik": 2,
+   "kunikma": "Ishonchli parol",
+   "matn": "Qaysi parol eng ISHONCHLI (buzish qiyin)?",
+   "variantlar": [
+    "123456",
+    "parol",
+    "Ali2013",
+    "K7#mQ2!vRx"
+   ],
+   "javob": 3
+  },
+  {
+   "id": "A29",
+   "bolim": "S6",
+   "qiyinlik": 1,
+   "kunikma": "Firibgarlikni tanish (SMS-kod)",
+   "matn": "Notanish odam Telegram’da yozdi: «Sovg‘a yutdingiz! Telefoningizga kelgan SMS-kodni yuboring». Nima qilish kerak?",
+   "variantlar": [
+    "Kodni darhol yuborish",
+    "Kodni hech kimga aytmaslik va kattalarga (ota-ona, ustoz) xabar berish",
+    "Kodni do‘stlarga ham yuborish",
+    "Javob yozib, sovg‘ani so‘rash"
+   ],
+   "javob": 1
+  },
+  {
+   "id": "A30",
+   "bolim": "S6",
+   "qiyinlik": 1,
+   "kunikma": "Antivirus vazifasi",
+   "matn": "Antivirus dasturi nima uchun kerak?",
+   "variantlar": [
+    "Kompyuterni zararli dasturlardan (viruslardan) himoyalash uchun",
+    "Matn yozish uchun",
+    "Internet tezligini oshirish uchun",
+    "Rasm chizish uchun"
+   ],
+   "javob": 0
+  }
+ ]
+}

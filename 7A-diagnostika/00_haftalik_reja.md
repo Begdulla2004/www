@@ -28,7 +28,7 @@ Javobga qarab variantni tanlang:
 ## 0-kun · Yakshanba (11-oktabr) — Tayyorgarlik (≈ 1 soat)
 
 - [ ] `README.md` va shu rejani o‘qib chiqish
-- [ ] Saytda `/7a/admin.php` → sinf kodi, ro‘yxat, so‘rovnoma va A-testni yoqish → o‘zingiz bir marta sinab ko‘rish
+- [ ] Saytda `…/7a/admin.php` → ustoz parolini o‘rnatish → sinf kodi, ro‘yxat, so‘rovnoma va A-testni yoqish → o‘zingiz bir marta sinab ko‘rish
 - [ ] `jadvallar/7A_monitoring.xlsx` → **Ro‘yxat** varag‘iga ismlarni kiritish (shaxsiy nusxada)
 - [ ] Chop etish:
   - [ ] `ism_kartochkalari.pdf` — o‘quvchilar soniga qarab (1 varaqda 2 ta)
