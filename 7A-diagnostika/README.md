@@ -34,6 +34,7 @@ Shu hafta 3 ta savolga aniq javob topasiz:
 | 11 | [`10_tahlil_va_darajalar.md`](10_tahlil_va_darajalar.md) | Natijani qanday hisoblash, darajalar, 7-sinfga moslik, 3 oydan keyin solishtirish | Test o‘tgandan keyin |
 | 12 | [`11_sinf_pasporti_shablon.md`](11_sinf_pasporti_shablon.md) | «7A sinf pasporti» — hafta yakunidagi 1 betlik xulosa | Shanba |
 | 13 | [`12_uch_oylik_monitoring.md`](12_uch_oylik_monitoring.md) | Oktabr → yanvar: nima qilish, oraliq tekshiruv, yakuniy o‘lchov, o‘z-o‘zini tahlil | 3 oy davomida |
+| 14 | [`13_saytda_jonli_dars.md`](13_saytda_jonli_dars.md) | **Darsni saytda jonli o‘tkazish** (qog‘ozsiz): o‘rnatish, tayyor 45 daqiqalik dastur, panel tugmalari | Darsdan oldin |
 
 ---
 
@@ -47,7 +48,9 @@ Shu hafta 3 ta savolga aniq javob topasiz:
 │   ├── test_A.json                   kirish testi (30 savol + kalit)
 │   ├── test_B.json                   yakuniy test (A ga parallel)
 │   ├── sorovnoma.json                tanishuv so‘rovnomasi
-│   └── fikr_sorovnoma.json           3 oydan keyingi anonim fikr so‘rovnomasi
+│   ├── fikr_sorovnoma.json           3 oydan keyingi anonim fikr so‘rovnomasi
+│   ├── chiqish_chiptasi.json         dars oxiridagi 4 savol
+│   └── dastur.json                   saytdagi jonli darsning standart dasturi (bosqichlar)
 ├── jadvallar/
 │   └── 7A_monitoring.xlsx         ← Excel: javoblarni kiritsangiz — ball, foiz, daraja, o‘sish avtomatik
 ├── chop_etish/                    ← chop etishga tayyor PDF va bitta to‘liq DOCX
@@ -65,33 +68,24 @@ Saytdagi qism alohida joyda: **`public/7a/`** — mustaqil papka (pastda).
 
 ---
 
-## Saytga qo‘yish (onlayn test va so‘rovnoma)
+## Saytga qo‘yish — darsni jonli, qog‘ozsiz o‘tkazish
 
-Onlayn qism — bitta mustaqil **`7a`** papkasi (`public/7a/`). U boshqa fayllarga bog‘liq emas:
+Onlayn qism — bitta mustaqil **`7a`** papkasi (`public/7a/`, alohida arxiv: `7a_sayt.zip`). Ma’lumotlar bazasi kerak emas:
 PHP ishlaydigan istalgan joyga (XAMPP, maktab sayti, JazbaAI) papkani **to‘liq** ko‘chirsangiz ishlaydi.
-O‘quvchilar kompyuter yoki telefondan kiradi, javoblar serverga saqlanadi, natijalar o‘zi hisoblanadi.
 
 | Kim | Manzil (misol) | Nima qiladi |
 |-----|----------------|-------------|
-| O‘quvchi | `…/7a/` | Sinf kodini kiritadi → ro‘yxatdan ismini tanlaydi → so‘rovnoma / test |
-| Ustoz | `…/7a/admin.php` | Parol bilan kiradi: sozlamalar, natijalar, o‘quvchi kartasi, CSV yuklab olish |
+| O‘quvchi | `…/7a/` | Sinf kodi → ismini tanlaydi → ustoz ochgan bosqichni bajaradi (ekran 3 soniyada o‘zi yangilanadi) |
+| Ustoz | `…/7a/admin.php` | **Jonli dars**: «Keyingi ▶», «Pauza», istalgan bosqichni boshlash/o‘tkazib yuborish; natijalar, o‘quvchi kartasi, so‘rovnomalar, amaliy baholash, **JSON eksport** |
 
-**Manzil papka qayerda turganiga bog‘liq.** Masalan, XAMPP’da:
-`C:\xampp\htdocs\7a\` → `http://localhost/7a/`;
-sayt papkasi `E:\Xojeli 5-mektep\` bo‘lsa va `7a` uning `public` ichida bo‘lsa → `http://localhost/public/7a/`
-(Apache’da qaysi papka sayt ildizi qilib sozlanganiga qarab). Sinfdagi boshqa kompyuterlardan kirish uchun
-`localhost` o‘rniga ustoz kompyuterining IP manzilini yozing (masalan `http://192.168.1.10/7a/`).
+- Darsning har bir qismi (so‘rovnoma, test qismlari, kayfiyat, tez yozish, chiqish chiptasi…) — **bosqich**. Qaysi bosqich darsda bo‘lishini, tartibini, vaqtini ustoz **Dastur** bo‘limida belgilaydi.
+- Javoblar har o‘zgarishda saqlanadi — ustoz keyingisiga o‘tib ketsa ham yo‘qolmaydi.
+- Barcha ma’lumotlar `7a/_data/` da oddiy **.json** fayllarda; panel orqali hammasini bitta JSON qilib yuklab olish mumkin.
 
-**Birinchi sozlash (5 daqiqa):**
-1. `7a` papkasini **ichidagi hamma narsa bilan** (`_savollar` papkasi ham!) saytingizga ko‘chiring.
-2. `…/7a/admin.php` ni oching → birinchi marta **ustoz parolini o‘rnating** (kamida 6 belgi). Buni o‘quvchilar kirishidan oldin qiling.
-3. **Sozlamalar** bo‘limida: sinf kodini yozing (masalan `7A2026`), o‘quvchilar ro‘yxatini (har qatorda bitta F.I.) joylang,
-   «Tanishuv so‘rovnomasi» va «Kirish testi (A)» ni yoqing → **Saqlash**.
-4. O‘zingiz bir marta o‘quvchi sifatida kirib sinab ko‘ring, keyin admin’da o‘sha yozuvni o‘chiring.
-5. Yanvarda «Kirish testi»ni o‘chirib, «Yakuniy test (B)» va «Fikr so‘rovnomasi»ni yoqasiz.
+**Batafsil qadamlar: [`13_saytda_jonli_dars.md`](13_saytda_jonli_dars.md)** (o‘rnatish, tayyor dastur, dars paytida qaysi tugma, muammolar).
 
-> O‘quvchi javoblari `7a/_data/` papkasida saqlanadi (birinchi javobda o‘zi yaratiladi) va **GitHub’ga yuklanmaydi** (`.gitignore`).
-> Zaxira nusxa uchun shu papkani ko‘chirib qo‘ying. Parolni unutsangiz — `7a/_data/ustoz.json.php` faylini o‘chiring.
+> O‘quvchi javoblari `7a/_data/` papkasida saqlanadi va **GitHub’ga yuklanmaydi** (`.gitignore`).
+> Parolni unutsangiz — `7a/_data/ustoz.json` faylini o‘chiring.
 > JazbaAI ichida ishlatsangiz, JazbaAI’dagi **Begdulla** logini bilan ham kirish mumkin (boshqa loginlar: `.env` → `SINF7A_USTOZ=login1,login2`).
 
 **Internet yoki sayt ishlamasa:** `chop_etish/` dagi PDF’larni chop eting, javoblarni `jadvallar/7A_monitoring.xlsx` ga kiriting — natija xuddi shunday hisoblanadi.

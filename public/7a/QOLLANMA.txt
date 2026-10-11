@@ -1,0 +1,39 @@
+7A DARS PLATFORMASI — QISQA QO'LLANMA
+=====================================
+
+Bu papka mustaqil sayt. PHP 7.0+ ishlaydigan istalgan serverga (XAMPP, OpenServer,
+maktab sayti, JazbaAI) "7a" papkasini TO'LIQ ko'chirish kifoya. Ma'lumotlar bazasi kerak emas.
+
+O'RNATISH
+---------
+1. "7a" papkasini saytingizga ko'chiring. Masalan:
+      E:\Xojeli 5-mektep\public\7a\    yoki    C:\xampp\htdocs\7a\
+   Ichida: index.php, admin.php, api.php, admin_api.php, inc\, assets\, _savollar\
+2. Brauzerda oching:   http://localhost/.../7a/admin.php
+   Birinchi marta ustoz parolini o'rnatasiz.
+3. Sozlamalar: sinf kodi + o'quvchilar ro'yxati (har qatorda bitta "Familiya Ism").
+4. O'quvchilar manzili:   http://<ustoz kompyuteri IP>/.../7a/
+   (IP: cmd -> ipconfig -> IPv4 Address). Windows brandmauerida Apache'ga ruxsat bering.
+
+DARSDA
+------
+admin.php -> "Jonli dars":
+  "Darsni boshlash" / "Keyingi"  (klaviaturada -> va <-)
+  "Pauza"                        - o'quvchilar ekrani to'xtaydi
+  ro'yxatdagi > tugmasi          - istalgan bosqichni hozir boshlash (masalan, dam olish)
+  belgini olib tashlash          - bosqichni o'tkazib yuborish
+  "Darsni yakunlash"
+O'quvchilar ekrani 3 soniyada o'zi yangilanadi. Javoblar har o'zgarishda saqlanadi.
+
+MA'LUMOTLAR
+-----------
+Hammasi  7a\_data\  papkasida oddiy .json fayllarda:
+  javoblar\<bosqich>\<o'quvchi>.json  - har bir o'quvchining javoblari
+  dastur.json, holat.json, sozlamalar.json, amaliy_baho.json
+Bitta umumiy JSON: admin.php -> "Eksport (JSON)".
+Zaxira uchun _data papkasini nusxalab qo'ying.
+
+Parolni unutsangiz: 7a\_data\ustoz.json faylini o'chiring.
+Sinovdan keyin tozalash: Sozlamalar -> "Barcha javoblarni arxivga o'tkazish".
+
+To'liq qo'llanma: 7A-diagnostika\13_saytda_jonli_dars.md

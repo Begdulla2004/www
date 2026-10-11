@@ -4,6 +4,9 @@
 > har bir o‘quvchini ismi bilan taniysiz, kimning qanday darajada ekanini bilasiz,
 > sinf 7-sinf dasturiga qanchalik tayyorligini raqamlarda ko‘rasiz va 3 oylik rejangiz tayyor.
 
+> 💻 **Darsni qog‘ozsiz, saytda jonli o‘tkazasiz** — test va savollarni ustoz panelidan «Keyingi ▶» bilan boshqarasiz.
+> Qanday qilish: [`13_saytda_jonli_dars.md`](13_saytda_jonli_dars.md). Pastdagi PDF’lar faqat zaxira (internet bo‘lmasa).
+
 Sizda 15 ta sinf bor, shuning uchun bu reja **qo‘shimcha vaqtni minimal** qilib tuzilgan:
 asosiy ish 7A darslarida, qolgani — tanaffus, darsdan keyingi 20–40 daqiqa va kechki 30 daqiqalik tahlil.
 

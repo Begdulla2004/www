@@ -44,8 +44,8 @@ data/          # JSON storage (dev/proto uchun)
 - `api/ai_grade.php`: AI baholash (Gemini)
 
 ## 7A diagnostika moduli
-- O‘quvchilar: `/7a/` — sinf kodi → ism → tanishuv so‘rovnomasi / kirish testi (A) / yakuniy test (B) / anonim fikr
-- Ustoz: `/7a/admin.php` — natijalar, darajalar, o‘sish (g), o‘quvchi kartasi, CSV (kirish: modulning o‘z paroli yoki JazbaAI logini — `.env` → `SINF7A_USTOZ`, standart `Begdulla`)
+- O‘quvchilar: `/7a/` — sinf kodi → ism → ustoz jonli boshqarayotgan bosqich (so‘rovnoma, test qismlari, kayfiyat, tez yozish, chiqish chiptasi…)
+- Ustoz: `/7a/admin.php` — jonli dars boshqaruvi (Keyingi / Pauza / istalgan bosqich), dastur, natijalar, o‘sish (g), o‘quvchi kartasi, JSON/CSV eksport (kirish: modulning o‘z paroli yoki JazbaAI logini — `.env` → `SINF7A_USTOZ`, standart `Begdulla`)
 - `public/7a/` mustaqil papka: boshqa PHP saytga (XAMPP) ham ko‘chirsa bo‘ladi; javoblar `public/7a/_data/` da (gitignore)
 - Savollar va barcha qo‘llanmalar: `7A-diagnostika/` (boshlash: `7A-diagnostika/README.md`)
 

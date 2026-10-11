@@ -1,0 +1,19 @@
+{
+  "id": "chiqish",
+  "nomi": "Chiqish chiptasi",
+  "anonim": false,
+  "vaqt_daqiqa": 3,
+  "korsatma": "Dars oxirida 4 ta qisqa savol. Samimiy javob bering — bu ustozga keyingi darsni yaxshiroq qilishga yordam beradi.",
+  "bolimlar": [
+    {
+      "nomi": "Bugungi dars",
+      "savollar": [
+        { "id": "his", "tur": "scale", "min": 1, "max": 5, "matn": "Bugungi darsda o‘zingizni qanday his qildingiz?", "belgilar": ["Juda yomon", "Juda yaxshi"] },
+        { "id": "test_qiyinligi", "tur": "single", "matn": "Bugungi test savollari siz uchun qanday bo‘ldi?",
+          "variantlar": ["Juda oson", "Oson", "Me’yorida", "Qiyin", "Juda qiyin"] },
+        { "id": "yangi_bilim", "tur": "textarea", "matn": "Bugun yangi nima bildingiz yoki nima esingizga tushdi?" },
+        { "id": "organmoqchi", "tur": "text", "matn": "Informatika darsida eng ko‘p nimani o‘rganmoqchisiz?" }
+      ]
+    }
+  ]
+}

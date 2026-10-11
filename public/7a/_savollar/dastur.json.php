@@ -1,0 +1,189 @@
+<?php http_response_code(404); exit; ?>
+{
+ "nomi": "7A — tanishuv va diagnostika darsi (45 daqiqa)",
+ "izoh": "Faol bosqichlar jami ~46 daqiqa. Vaqt yetmasa yoki o‘quvchilar charchasa — ustoz panelida bosqichni o‘tkazib yuboring yoki boshqasiga o‘ting. «Zaxira» bosqichlar (faol emas) kerak bo‘lganda yoqiladi.",
+ "bosqichlar": [
+  {
+   "id": "b01",
+   "tur": "info",
+   "nomi": "Xush kelibsiz!",
+   "emoji": "👋",
+   "daqiqa": 2,
+   "faol": true,
+   "matn": "Bugun biz bir-birimiz bilan tanishamiz va informatikadan qayerda turganimizni bilib olamiz.\n\nTest va savollar BAHO UCHUN EMAS — ustoz sizga qanday yordam berishni bilishi uchun.\n\nEkrandagi ko‘rsatmalarni bajaring. Savol bo‘lsa — qo‘l ko‘taring."
+  },
+  {
+   "id": "b02",
+   "tur": "info",
+   "nomi": "Tanishuv o‘yini: «Ism zanjiri»",
+   "emoji": "🔗",
+   "daqiqa": 5,
+   "faol": true,
+   "matn": "Navbat bilan o‘rningizdan turib ayting:\n«Men — [ismingiz], men [sevimli mashg‘ulotingiz]ni yaxshi ko‘raman.»\n\nKeyingi o‘quvchi oldingi IKKI kishini takrorlaydi va o‘zini qo‘shadi.\n\nOxirida ustoz hammangizni ismingiz bilan aytib chiqadi — adashsa, yordam bering! 🙂"
+  },
+  {
+   "id": "b03",
+   "tur": "sorovnoma",
+   "manba": "sorovnoma",
+   "bolimlar": [
+    0,
+    1
+   ],
+   "nomi": "Men haqimda (so‘rovnoma, 1-qism)",
+   "emoji": "📝",
+   "daqiqa": 5,
+   "faol": true
+  },
+  {
+   "id": "b04",
+   "tur": "test",
+   "manba": "test_A",
+   "bolimlar": [
+    "S1",
+    "S2",
+    "S3"
+   ],
+   "nomi": "Kirish testi — 1-qism: tayanch bilimlar",
+   "emoji": "🧩",
+   "daqiqa": 12,
+   "faol": true
+  },
+  {
+   "id": "b05",
+   "tur": "kayfiyat",
+   "nomi": "Kayfiyat qalay?",
+   "emoji": "🌡️",
+   "daqiqa": 1,
+   "faol": true,
+   "matn": "Hozir o‘zingizni qanday his qilyapsiz? Halol belgilang — ustoz darsni shunga qarab davom ettiradi."
+  },
+  {
+   "id": "b06",
+   "tur": "info",
+   "nomi": "1 daqiqalik dam olish",
+   "emoji": "🙆",
+   "daqiqa": 1,
+   "faol": false,
+   "matn": "O‘rnimizdan turamiz!\n\n1) Qo‘llarni yuqoriga cho‘zamiz — 5 soniya.\n2) Ko‘zni yumib, 3 marta chuqur nafas olamiz.\n3) Derazadan uzoqdagi narsaga 20 soniya qaraymiz — ko‘z dam oladi.\n4) Joyga o‘tiramiz — davom etamiz! 💪"
+  },
+  {
+   "id": "b07",
+   "tur": "test",
+   "manba": "test_A",
+   "bolimlar": [
+    "S4",
+    "S5",
+    "S6"
+   ],
+   "nomi": "Kirish testi — 2-qism: 7-sinf mavzulari",
+   "emoji": "💻",
+   "daqiqa": 12,
+   "faol": true
+  },
+  {
+   "id": "b08",
+   "tur": "yozish",
+   "nomi": "Tez yozish (1 daqiqa)",
+   "emoji": "⌨️",
+   "daqiqa": 2,
+   "faol": true,
+   "sekund": 60,
+   "matn": "Men 7A sinf o‘quvchisiman. Informatika — kelajak kasblarining kaliti. Kompyuter bilan ishlashni o‘rganaman."
+  },
+  {
+   "id": "b09",
+   "tur": "sorovnoma",
+   "manba": "sorovnoma",
+   "bolimlar": [
+    2,
+    3,
+    4,
+    5
+   ],
+   "nomi": "Informatika va men (so‘rovnoma, 2-qism)",
+   "emoji": "💬",
+   "daqiqa": 5,
+   "faol": true
+  },
+  {
+   "id": "b10",
+   "tur": "sorovnoma",
+   "manba": "chiqish",
+   "bolimlar": [
+    0
+   ],
+   "nomi": "Chiqish chiptasi",
+   "emoji": "🎟️",
+   "daqiqa": 2,
+   "faol": true
+  },
+  {
+   "id": "b11",
+   "tur": "info",
+   "nomi": "Rahmat!",
+   "emoji": "🎉",
+   "daqiqa": 0,
+   "faol": true,
+   "matn": "Bugungi dars tugadi. Ishtirokingiz uchun rahmat!\n\nEkrandagi «Chiqish» tugmasini bosing — kompyuterdan keyingi o‘quvchi foydalanadi."
+  },
+  {
+   "id": "b12",
+   "tur": "amaliy",
+   "nomi": "Amaliy topshiriq (kompyuterda)",
+   "emoji": "🛠️",
+   "daqiqa": 15,
+   "faol": false,
+   "matn": "Har bir topshiriqni bajaring va «Bajardim» ni belgilang. Ustoz aylanib tekshiradi.",
+   "vazifalar": [
+    "Ish stolida «7A_Ismingiz» nomli papka yarating.",
+    "Word’ni oching va «Men haqimda» sarlavhasini yozing.",
+    "Sarlavhani qalin, markazda va 16 o‘lchamli qiling.",
+    "Hujjatni papkangizga «tanishuv» nomi bilan saqlang.",
+    "Scratch’da: qahramon 4 marta takrorlab 50 qadam yursin va «Salom!» desin.",
+    "Brauzerda «Qoraqalpog‘iston Respublikasi poytaxti»ni qidirib, javobni hujjat oxiriga yozing va saqlang."
+   ]
+  },
+  {
+   "id": "b13",
+   "tur": "test",
+   "manba": "test_B",
+   "bolimlar": [
+    "S1",
+    "S2",
+    "S3"
+   ],
+   "nomi": "Yakuniy test (B) — 1-qism (yanvar)",
+   "emoji": "🧩",
+   "daqiqa": 12,
+   "faol": false
+  },
+  {
+   "id": "b14",
+   "tur": "test",
+   "manba": "test_B",
+   "bolimlar": [
+    "S4",
+    "S5",
+    "S6"
+   ],
+   "nomi": "Yakuniy test (B) — 2-qism (yanvar)",
+   "emoji": "💻",
+   "daqiqa": 12,
+   "faol": false
+  },
+  {
+   "id": "b15",
+   "tur": "sorovnoma",
+   "manba": "fikr",
+   "bolimlar": [
+    0,
+    1,
+    2
+   ],
+   "nomi": "Darslar haqida fikr — anonim (yanvar)",
+   "emoji": "🗳️",
+   "daqiqa": 7,
+   "faol": false
+  }
+ ]
+}
