@@ -14,6 +14,7 @@
 3. **Sozlamalar**: sinf kodi (masalan `7A2026`) + o‘quvchilar ro‘yxati (har qatorda bitta) → Saqlash.
 4. **Dastur** bo‘limini ko‘rib chiqing — tayyor 45 daqiqalik dastur bor (pastda). Kerak bo‘lsa nomi, vaqti, test bo‘limlarini o‘zgartiring.
 5. **Sinab ko‘ring**: ikkinchi oynada `…/7a/` ni oching (o‘quvchi sifatida), panelda «▶ Darsni boshlash», «Keyingi ▶» ni bir necha marta bosing.
+   ⚠️ Sinashda **haqiqiy o‘quvchi ismini tanlamang** — «Ro‘yxatda yo‘qman…» → `TEST Ustoz` deb yozing. Aks holda o‘sha o‘quvchi darsda ba’zi bosqichlarni «topshirilgan» deb ko‘radi.
 6. **Tozalash**: Sozlamalar → «Barcha javoblarni arxivga o‘tkazish». Endi hammasi toza.
 7. Sinf kompyuterlaridan sayt ochilishini tekshiring: `http://<sizning kompyuteringiz IP manzili>/…/7a/`
    (IP manzilni bilish: `cmd` → `ipconfig` → «IPv4 Address»). Windows brandmauerida Apache’ga ruxsat bering.

@@ -259,7 +259,13 @@ s7a_bosh('Ustoz paneli', 'admin', ' data-csrf="' . s7a_h(s7a_csrf()) . '"');
 $Y = in_array($bolim, ['natijalar', 'oquvchilar', 'oquvchi', 'sorovnomalar', 'amaliy'], true) ? s7a_yozuvlar() : [];
 
 // ================================================================ JONLI DARS
-if ($bolim === 'jonli'): ?>
+if ($bolim === 'jonli'):
+  // Dars hali boshlanmagan, lekin bazada javoblar bor — ehtimol sinov javoblari (ular haqiqiy darsga aralashib ketmasin)
+  $eski_soni = ($h['joriy'] === null && !$h['tugadi']) ? count(glob(S7A_DATA . '/javoblar/*/*.json') ?: []) : 0;
+  if ($eski_soni): ?>
+    <div class="alert">⚠️ Bazada allaqachon <b><?= $eski_soni ?></b> ta javob bor. Agar bu <b>sinov</b> javoblari bo‘lsa, darsni boshlashdan oldin
+      <a href="admin.php?b=sozlamalar">Sozlamalar → «Barcha javoblarni arxivga o‘tkazish»</a> ni bosing — aks holda o‘sha o‘quvchilar ba’zi bosqichlarni «topshirilgan» deb ko‘radi.</div>
+  <?php endif; ?>
   <section class="card live-bar">
     <div class="ctrl">
       <button class="btn ghost" data-h="oldingi">◀ Oldingi</button>

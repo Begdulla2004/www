@@ -226,7 +226,7 @@ function s7a_boshqar($harakat, $bosqich_id = null) {
 
 function s7a_yozuv_yoli($bosqich_id, $kalit) { return S7A_DATA . '/javoblar/' . $bosqich_id . '/' . $kalit . '.json'; }
 
-function s7a_yozuv($bosqich_id, $kalit) { return s7a_json_oqi(s7a_yozuv_yoli($bosqich_id, $kalit), null); }
+function s7a_yozuv($bosqich_id, $kalit) { return s7a_yozuv_tuzat(s7a_json_oqi(s7a_yozuv_yoli($bosqich_id, $kalit), null)); }
 
 function s7a_yozuv_saqla($r) { s7a_json_yoz(s7a_yozuv_yoli($r['bosqich'], $r['kalit']), $r); }
 
@@ -235,7 +235,7 @@ function s7a_yozuvlar($bosqich_id = null) {
   $out = [];
   foreach (glob($naqsh) ?: [] as $f) {
     if (basename($f)[0] === '_') continue;
-    $r = s7a_json_oqi($f, null);
+    $r = s7a_yozuv_tuzat(s7a_json_oqi($f, null));
     if ($r) $out[] = $r;
   }
   usort($out, function ($a, $b) { return strcmp($a['yangilandi'] ?? '', $b['yangilandi'] ?? ''); });
@@ -373,19 +373,42 @@ function s7a_javoblarni_tozala($b, $post) {
   return [];
 }
 
-// Tez yozish: namunadagi har bir belgi o‘z o‘rnida to‘g‘ri yozilganmi (belgilar UTF-8 bo‘yicha)
+// Tez yozish uchun solishtiriladigan ko‘rinish: tutuq belgilari (‘ ’ ʻ ` ') bir xil, bo‘shliqlar yig‘iladi, harf kattaligi muhim emas
+function s7a_yozish_norma($s) {
+  $s = preg_replace("/[\x{2018}\x{2019}\x{02BB}\x{02BC}`\x{00B4}']/u", "'", (string)$s);
+  $s = trim((string)preg_replace('/\s+/u', ' ', (string)$s));
+  return function_exists('mb_strtolower') ? mb_strtolower($s, 'UTF-8') : strtolower($s);
+}
+
+// Tez yozish: yozilgan matn namuna bilan tekislab (LCS) solishtiriladi — bitta harf tushib qolsa,
+// keyingi barcha harflar «xato» bo‘lib qolmaydi. To‘g‘ri belgi = mos kelgan belgilar soni.
 function s7a_yozish_hisobla($namuna, $matn, $sek) {
-  preg_match_all('/./us', $namuna, $a);
-  preg_match_all('/./us', $matn, $b);
-  $a = $a[0]; $b = $b[0];
-  $togri = 0;
-  $n = min(count($a), count($b));
-  for ($i = 0; $i < $n; $i++) if ($a[$i] === $b[$i]) $togri++;
+  preg_match_all('/./us', s7a_yozish_norma($namuna), $a);
+  preg_match_all('/./us', s7a_yozish_norma($matn), $b);
+  $a = array_slice($a[0], 0, count($b[0]) + 8); // namunaning o‘quvchi yetib borgan qismi
+  $b = $b[0];
+  $oldin = array_fill(0, count($a) + 1, 0);
+  foreach ($b as $x) {
+    $joriy = [0];
+    foreach ($a as $j => $y) $joriy[] = $x === $y ? $oldin[$j] + 1 : max($oldin[$j + 1], $joriy[$j]);
+    $oldin = $joriy;
+  }
+  $togri = end($oldin) ?: 0;
+  $belgi = s7a_uzunlik($matn);
   return [
-    'matn' => $matn, 'sekund' => $sek, 'belgi' => count($b), 'togri_belgi' => $togri,
+    'matn' => $matn, 'sekund' => $sek, 'belgi' => $belgi, 'togri_belgi' => $togri,
     'aniqlik' => count($b) ? (int)round($togri / count($b) * 100) : 0,
     'tezlik' => (int)round($togri * 60 / $sek), // to‘g‘ri belgi / daqiqa
   ];
+}
+
+// Eski hisob bilan saqlangan yozuvlarni ham to‘g‘ri ko‘rsatish: xom matndan qayta hisoblaymiz
+function s7a_yozuv_tuzat($r) {
+  if (!$r || ($r['tur'] ?? '') !== 'yozish' || !isset($r['javoblar']['matn'])) return $r;
+  $b = s7a_bosqich($r['bosqich']);
+  if (!$b || !isset($b['matn'])) return $r;
+  $r['javoblar'] = s7a_yozish_hisobla($b['matn'], $r['javoblar']['matn'], (int)($r['javoblar']['sekund'] ?? 60));
+  return $r;
 }
 
 // ---------------------------------------------------------------- test hisob-kitobi
